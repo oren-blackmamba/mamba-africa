@@ -1,7 +1,8 @@
+
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>ממבה אפריקה</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&family=Secular+One&family=Suez+One&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&family=Secular+One&family=Suez+One&family=Press+Start+2P&family=VT323&family=Rubik+Mono+One&display=swap">
 <style>
 /* Layout: hero + a "board" with two modes (hop-by-hop trip builder, point-to-point), a sticky schematic map beside it, then reference sections. Border-stamp badges mark every crossing. */
 :root{
@@ -658,6 +659,163 @@ button,select,.btn{min-height:44px}
 #app .side::before,#app .side::after{display:none!important}#app .side{padding:10px!important}
 @media (min-width:1100px){#app .stage .pop,#app .stage .side{max-height:max(560px,calc(100vh - 112px))!important;overflow-y:auto!important;overflow-x:hidden!important;align-self:start}}
 @media (min-width:1100px){#app .stage .instr{grid-column:1!important;grid-row:2!important;align-self:start}}
+
+/* ===== COLORFUL 70s CARDS ===== */
+#app :is(.pop,.side) .tk:not(:last-child)::after{content:""!important;bottom:-30px!important;height:3px;background:repeating-linear-gradient(90deg,var(--c1) 0 10px,transparent 10px 18px)!important;left:18%;right:18%;top:auto}
+#app :is(.pop,.side) .tk{margin-bottom:44px!important;--c1:#D9531E;--c2:#F7B733;--tint:#FFE9D6}
+#app :is(.pop,.side) .tk:nth-of-type(5n+2),#app :is(.pop,.side) .tk:nth-child(5n+2){--c1:#1E8F8A;--c2:#B8E04A;--tint:#DDF5EF}
+#app :is(.pop,.side) .tk:nth-child(5n+3){--c1:#C8286E;--c2:#FFB4D2;--tint:#FFE0EE}
+#app :is(.pop,.side) .tk:nth-child(5n+4){--c1:#2F63C9;--c2:#7FD6F5;--tint:#E0ECFF}
+#app :is(.pop,.side) .tk:nth-child(5n+5){--c1:#7A3FC4;--c2:#FFD23F;--tint:#EBDDFF}
+#app :is(.pop,.side) .tk{background:var(--tint)!important;border:4px solid #2A1A0E!important;box-shadow:7px 7px 0 var(--c1)!important}
+#app :is(.pop,.side) .tk .tks:first-child{background:linear-gradient(135deg,var(--c1),color-mix(in srgb,var(--c1) 60%,var(--c2)))!important;color:#fff!important;position:relative;overflow:hidden;padding-bottom:12px!important}
+#app :is(.pop,.side) .tk .tks:first-child::after{content:"";position:absolute;inset-inline-start:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:repeating-radial-gradient(circle,var(--c2) 0 6px,transparent 6px 12px);opacity:.5;pointer-events:none}
+#app :is(.pop,.side) .tk .tks:first-child *{color:#fff!important}
+#app :is(.pop,.side) .tk .tks:first-child .cty{background:var(--c2)!important;color:#2A1A0E!important;border-color:#2A1A0E!important}
+#app :is(.pop,.side) .tk .tks:first-child .rbn{background:#2A1A0E!important;color:#fff!important}
+#app :is(.pop,.side) .tk .tks:first-child .chip{background:#fff!important;color:#2A1A0E!important;box-shadow:2px 2px 0 #2A1A0E!important}
+#app :is(.pop,.side) .tk .tks:first-child .chip *{color:#2A1A0E!important}
+#app :is(.pop,.side) .tk .tp .dot{background:var(--c2)!important;border-color:#2A1A0E!important}
+#app :is(.pop,.side) .tk .tb{border-inline-start-color:#fff!important}
+#app :is(.pop,.side) .tk h5{display:inline-flex!important;background:var(--c1);color:#fff!important;padding:2px 12px 2px 10px;border-radius:999px;border:2.5px solid #2A1A0E;box-shadow:2px 2px 0 #2A1A0E}
+#app :is(.pop,.side) .tk .tks:first-child h5{background:#2A1A0E}
+#app :is(.pop,.side) .tk .tks{border-top:3px dashed var(--c1)!important}
+#app :is(.pop,.side) .tk .tks:first-child{border-top:0!important}
+#app :is(.pop,.side) .tk .tinfo.c>div{background:#fff;border:2px solid #2A1A0E!important;border-radius:12px;padding:4px 10px!important;margin:5px 0;box-shadow:2px 2px 0 var(--c2)}
+#app :is(.pop,.side) .tk .cocard{background:#fff!important;border:3px solid #2A1A0E!important;border-radius:16px!important;box-shadow:4px 4px 0 var(--c2)!important;padding:8px 10px 8px!important;margin:10px 0!important}
+#app :is(.pop,.side) .tk .cocard:nth-child(4n+1) .cohead b{background:#D9531E!important}
+#app :is(.pop,.side) .tk .cocard:nth-child(4n+2) .cohead b{background:#1E8F8A!important}
+#app :is(.pop,.side) .tk .cocard:nth-child(4n+3) .cohead b{background:#C8286E!important}
+#app :is(.pop,.side) .tk .cocard:nth-child(4n+4) .cohead b{background:#2F63C9!important}
+#app :is(.pop,.side) .tk .cocard .cohead b{color:#fff!important;border:2px solid #2A1A0E!important}
+#app :is(.pop,.side) .tk .cocard .mp{background:var(--c2)!important;color:#2A1A0E!important}
+#app :is(.pop,.side) .tk .cl{border-radius:10px;padding:3px 6px;margin:2px 0}
+#app :is(.pop,.side) .tk .cl:nth-child(even){background:#E6F8E2}
+#app :is(.pop,.side) .tk .cl:nth-child(odd){background:#FFE3E3}
+#app :is(.pop,.side) .tk .actions .btn{background:var(--c1)!important;color:#fff!important}
+#app :is(.pop,.side) .tk .actions .btn.primary{background:#2A1A0E!important;color:#fff!important}
+#app :is(.pop,.side) .tk .actions{padding:8px 11px 11px;display:flex;flex-wrap:wrap;gap:8px}
+@media (prefers-reduced-motion:no-preference){#app :is(.pop,.side) .tk{animation:tkin .4s ease-out both}@keyframes tkin{from{transform:translateY(8px) rotate(-.5deg);opacity:0}to{transform:none;opacity:1}}}
+
+/* ===== VINTAGE BUS-TICKET / AIRMAIL PANEL ===== */
+#app :is(.pop,.side){--ink:#2B2118;--paper:#F4E7C6;--red:#B3261E;--blue:#1F4E79;
+ background:repeating-linear-gradient(0deg,rgba(90,60,20,.045) 0 1px,transparent 1px 4px),radial-gradient(ellipse at 30% 10%,#FAF0D4,#EAD8AA)!important;
+ border:3px double var(--ink)!important;border-radius:6px!important;box-shadow:6px 6px 0 rgba(43,33,24,.35)!important;font-family:"Courier New",Courier,monospace!important;color:var(--ink)!important;gap:0!important}
+#app .pop::before{height:18px!important;margin:-10px -12px 10px!important;border:0!important;border-bottom:3px double var(--ink)!important;border-radius:0!important;background:repeating-linear-gradient(135deg,var(--red) 0 12px,#FAF0D4 12px 20px,var(--blue) 20px 32px,#FAF0D4 32px 40px)!important}
+#app .pop::after{content:"BUS · 1973"!important;background:transparent!important;color:var(--red)!important;border:3px double var(--red)!important;border-radius:4px!important;box-shadow:none!important;transform:rotate(-5deg)!important;font:700 13px/1.4 "Courier New",monospace!important;letter-spacing:.14em!important;padding:0 8px!important;top:20px!important;opacity:.85}
+#app :is(.pop,.side) h3{font-family:"Suez One",Georgia,serif!important;text-shadow:none!important;color:var(--ink)!important}
+/* ticket cards */
+#app :is(.pop,.side) .tk{--ac:var(--red);margin:0 0 70px!important;border:2px solid var(--ink)!important;border-radius:4px!important;background:repeating-linear-gradient(0deg,rgba(90,60,20,.05) 0 1px,transparent 1px 4px),#FBF2D8!important;box-shadow:5px 5px 0 rgba(43,33,24,.45)!important;outline:2px dashed rgba(43,33,24,.5);outline-offset:-8px;overflow:visible!important;animation:none!important}
+#app :is(.pop,.side) .tk:nth-child(4n+2){--ac:var(--blue)}#app :is(.pop,.side) .tk:nth-child(4n+3){--ac:#2F6B3A}#app :is(.pop,.side) .tk:nth-child(4n+4){--ac:#8A4B12}
+#app :is(.pop,.side) .tk:last-child{margin-bottom:6px!important}
+#app :is(.pop,.side) .tk:not(:last-child)::before{content:"";position:absolute;left:50%;bottom:-62px;height:54px;border-inline-start:4px dotted var(--ink);transform:translateX(-50%);width:0;display:block;background:none!important}
+#app :is(.pop,.side) .tk:not(:last-child)::after{content:"🚌"!important;position:absolute;left:50%;bottom:-66px;transform:translateX(-50%) rotate(-6deg);width:46px!important;height:46px;border-radius:50%;background:#FBF2D8!important;border:3px solid var(--ink);display:grid!important;place-items:center;font-size:24px;line-height:1;right:auto!important;margin:0!important;text-align:center}
+#app :is(.pop,.side) .tk .tks{border-top:0!important;background:transparent!important;padding:12px 16px!important}
+#app :is(.pop,.side) .tk .tks:first-child{background:transparent!important;color:var(--ink)!important;border-inline-start:12px solid var(--ac)!important;border-radius:2px 0 0 2px;padding-bottom:14px!important}
+#app :is(.pop,.side) .tk .tks:first-child::after{display:none!important}
+#app :is(.pop,.side) .tk .tks:first-child *,#app :is(.pop,.side) .tk .tks *{color:var(--ink)!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2){border-top:3px dashed var(--ink)!important;position:relative;margin-top:12px}
+#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(2)::after{content:"";position:absolute;top:-14px;width:24px;height:24px;border-radius:50%;background:#EAD8AA;border:2px solid var(--ink)}
+#app :is(.pop,.side) .tk .tks:nth-child(2)::before{left:-14px}#app :is(.pop,.side) .tk .tks:nth-child(2)::after{right:-14px}
+#app :is(.pop,.side) .tk .tks:nth-child(3){border-top:2px dotted var(--ink)!important}
+#app :is(.pop,.side) .tk h5{background:none!important;border:0!important;box-shadow:none!important;padding:0 0 4px!important;border-bottom:2px solid var(--ac)!important;border-radius:0!important;font-family:"Suez One",Georgia,serif!important;font-size:15px!important;letter-spacing:.04em;color:var(--ac)!important;display:flex!important}
+#app :is(.pop,.side) .tk h5 *,#app :is(.pop,.side) .tk h5{color:var(--ac)!important}
+#app :is(.pop,.side) .tk .tp b{font-family:"Suez One",Georgia,serif!important;font-size:21px!important;color:var(--ink)!important}
+#app :is(.pop,.side) .tk .tp small{color:#6B5A44!important;letter-spacing:.1em}
+#app :is(.pop,.side) .tk .tp .dot,#app :is(.pop,.side) .tk .tks:first-child .tp .dot{background:var(--paper)!important;border:3px solid var(--ink)!important;border-radius:50%}
+#app :is(.pop,.side) .tk .tp.r .dot{background:var(--ac)!important}
+#app :is(.pop,.side) .tk .tb{border-inline-start:4px dotted var(--ink)!important}
+#app :is(.pop,.side) .tk .rbn{background:transparent!important;color:var(--red)!important;border:3px double var(--red)!important;border-radius:5px!important;transform:rotate(-4deg);padding:2px 10px!important;font-weight:700;letter-spacing:.06em;opacity:.9}
+#app :is(.pop,.side) .tk .rbn *{color:var(--red)!important}
+#app :is(.pop,.side) .tk .cty{background:transparent!important;border:2px solid var(--ink)!important;border-radius:3px!important;color:var(--ink)!important;font-weight:700}
+#app :is(.pop,.side) .tk .chip{background:transparent!important;border:2px solid var(--ink)!important;border-radius:3px!important;box-shadow:none!important;color:var(--ink)!important;font-weight:700}
+#app :is(.pop,.side) .tk .tinfo.c>div{background:transparent!important;border:0!important;border-bottom:1px dashed rgba(43,33,24,.5)!important;border-radius:0!important;box-shadow:none!important;padding:5px 0!important;margin:0!important}
+#app :is(.pop,.side) .tk .cocard{background:transparent!important;border:0!important;border-top:2px solid var(--ink)!important;border-radius:0!important;box-shadow:none!important;margin:0!important;padding:8px 0 6px!important}
+#app :is(.pop,.side) .tk .cocard:first-child{border-top:0!important}
+#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b{background:var(--ink)!important;color:#FBF2D8!important;border:0!important;border-radius:2px!important;font-family:"Courier New",monospace!important;font-weight:700!important;letter-spacing:.06em;padding:1px 10px!important}
+#app :is(.pop,.side) .tk .cocard .cohead b *{color:#FBF2D8!important}
+#app :is(.pop,.side) .tk .cl{background:transparent!important;border-radius:0!important;padding:3px 0!important}
+#app :is(.pop,.side) .tk .cocard .mp{background:transparent!important;border:2px solid var(--ac)!important;color:var(--ac)!important;border-radius:3px!important;font-weight:700}
+#app :is(.pop,.side) .tk .cocard a,#app :is(.pop,.side) .tk .cocard .mp *{color:var(--ac)!important}
+#app :is(.pop,.side) .tk .actions .btn{background:#FBF2D8!important;color:var(--ink)!important;border:2px solid var(--ink)!important;border-radius:3px!important;box-shadow:3px 3px 0 var(--ink)!important}
+#app :is(.pop,.side) .tk .actions .btn.primary{background:var(--ac)!important;color:#FBF2D8!important}
+#app :is(.pop,.side) .btn{border-radius:3px!important;font-family:"Courier New",monospace!important;box-shadow:3px 3px 0 var(--ink)!important}
+#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{color:#B3261E!important}#app .pop::after{top:auto!important;bottom:auto!important;inset-inline-start:auto!important;inset-inline-end:14px!important;top:26px!important;z-index:2}
+
+#app :is(.pop,.side) .stips{position:relative;margin:6px 14px 4px;padding:10px 14px 10px;background:#FFF8E0;border:2px solid #2B2118;outline:2px dashed rgba(43,33,24,.45);outline-offset:-6px;font-size:12.5px;line-height:1.5}
+#app :is(.pop,.side) .stips h6{margin:6px 0 2px;font:400 14px "Suez One",Georgia,serif;color:var(--ac,#B3261E);letter-spacing:.05em}
+#app :is(.pop,.side) .stips ol,#app :is(.pop,.side) .stips ul{margin:0;padding-inline-start:20px}
+#app :is(.pop,.side) .stips .sx{float:inline-start;margin:0 0 4px 8px;min-height:30px;padding:2px 10px;font:700 12px "Courier New",monospace;background:#2B2118;color:#FBF2D8;border:0;border-radius:2px;cursor:pointer}
+/* extra-vintage paper */
+#app :is(.pop,.side){box-shadow:6px 6px 0 rgba(43,33,24,.35),inset 0 0 70px rgba(120,80,20,.38)!important;background:radial-gradient(circle at 12% 18%,rgba(150,100,30,.18) 0 22px,transparent 40px),radial-gradient(circle at 85% 70%,rgba(150,100,30,.16) 0 30px,transparent 55px),repeating-linear-gradient(0deg,rgba(90,60,20,.05) 0 1px,transparent 1px 4px),radial-gradient(ellipse at 30% 10%,#F8EBC8,#E6D29C)!important}
+#app :is(.pop,.side) .tk{background:radial-gradient(circle at 0 8px,#EBD9AA 6px,transparent 7px) left/12px 18px repeat-y,radial-gradient(circle at 100% 8px,#EBD9AA 6px,transparent 7px) right/12px 18px repeat-y,radial-gradient(circle at 80% 15%,rgba(150,100,30,.16) 0 18px,transparent 34px),repeating-linear-gradient(0deg,rgba(90,60,20,.05) 0 1px,transparent 1px 4px),#FAEFD0!important;box-shadow:5px 5px 0 rgba(43,33,24,.5),inset 0 0 40px rgba(150,100,30,.25)!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(2)::after{display:none!important}
+#app :is(.pop,.side) .tk .tks:first-child::before{content:"★ ★ ★";position:absolute;top:4px;inset-inline-end:14px;font-size:11px;letter-spacing:.3em;color:var(--ac);opacity:.7}
+#app .pop::after{inset-inline-end:auto!important;inset-inline-start:auto!important;left:160px!important;right:auto!important;top:34px!important}
+
+/* ===== DOS / NORTON COMMANDER PANEL ===== */
+#app :is(.pop,.side){--bl:#0000AA;--bl2:#0000C8;--gr:#C0C0C0;--wh:#FFFFFF;--cy:#55FFFF;--ye:#FFFF55;--gn:#55FF55;--rd:#FF5555;--mg:#FF55FF;--bk:#000;
+ background:var(--bl)!important;color:var(--wh)!important;border:0!important;border-radius:0!important;margin:6px!important;padding:12px!important;
+ font-family:"IBM Plex Mono","Courier New",Courier,monospace!important;font-size:15px!important;font-weight:500;line-height:1.55;
+ box-shadow:0 0 0 4px var(--gr),0 0 0 6px var(--bk),14px 14px 0 0 rgba(0,0,0,.6)!important;filter:none!important;gap:0!important}
+#app .pop::before{content:"C:\\MAMBA\\AFRICA> BUS.EXE"!important;display:block;height:auto!important;margin:-12px -12px 10px!important;padding:3px 10px!important;border:0!important;border-radius:0!important;background:var(--gr)!important;color:var(--bk)!important;font:700 14px/1.5 "IBM Plex Mono","Courier New",monospace!important;letter-spacing:.04em;direction:ltr;text-align:left}
+#app .pop::after{content:""!important;display:none!important}
+#app .side::before,#app .side::after{display:none!important}
+#app :is(.pop,.side) h3{font-family:"IBM Plex Mono","Courier New",monospace!important;font-size:18px!important;font-weight:700!important;color:var(--ye)!important;text-shadow:none!important;background:none!important}
+#app :is(.pop,.side) .btn{background:var(--gr)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;box-shadow:4px 4px 0 var(--bk)!important;font:700 14px/1.4 "IBM Plex Mono","Courier New",monospace!important;padding:6px 12px!important;transform:none!important}
+#app :is(.pop,.side) .btn *{color:var(--bk)!important}
+#app :is(.pop,.side) .btn:hover,#app :is(.pop,.side) .btn:focus-visible{background:var(--cy)!important;outline:2px solid var(--wh)!important}
+#app :is(.pop,.side) .btn.primary{background:var(--ye)!important}
+#app :is(.pop,.side) .pophd *,#app .pop>*:not(.tk),#app .pop>*:not(.tk) *{color:var(--wh)!important;font-family:inherit!important}
+#app .pop .asec h4{color:var(--ye)!important;font:700 15px "IBM Plex Mono","Courier New",monospace!important;text-shadow:none!important;border-bottom:2px solid var(--cy);padding-bottom:3px}
+/* boxes */
+#app :is(.pop,.side) .tk{--ac:var(--cy);margin:0 0 56px!important;background:var(--bl)!important;border:4px double var(--wh)!important;border-radius:0!important;outline:0!important;box-shadow:8px 8px 0 var(--bk)!important;animation:none!important;overflow:visible!important}
+#app :is(.pop,.side) .tk:nth-child(4n+2){--ac:var(--ye)}#app :is(.pop,.side) .tk:nth-child(4n+3){--ac:var(--gn)}#app :is(.pop,.side) .tk:nth-child(4n+4){--ac:var(--mg)}
+#app :is(.pop,.side) .tk:last-child{margin-bottom:8px!important}
+#app :is(.pop,.side) .tk:not(:last-child)::before{content:"";position:absolute;left:50%;bottom:-52px;height:46px;width:0;border-inline-start:4px dashed var(--wh)!important;transform:translateX(-50%);background:none!important;display:block}
+#app :is(.pop,.side) .tk:not(:last-child)::after{content:"▼"!important;position:absolute;left:50%;bottom:-54px;transform:translateX(-50%)!important;width:auto!important;height:auto!important;padding:0 8px;background:var(--bl)!important;color:var(--wh)!important;border:0!important;border-radius:0!important;font:700 18px/1 "IBM Plex Mono",monospace!important;animation:none!important;display:block!important;right:auto!important;margin:0!important}
+#app :is(.pop,.side) .tk .tks{background:transparent!important;border:0!important;border-radius:0!important;padding:10px 14px!important;margin:0!important;color:var(--wh)!important}
+#app :is(.pop,.side) .tk .tks:first-child{border-inline-start:0!important;background:transparent!important;padding-top:6px!important}
+#app :is(.pop,.side) .tk .tks:first-child::before,#app :is(.pop,.side) .tk .tks:first-child::after,#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(2)::after{display:none!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2),#app :is(.pop,.side) .tk .tks:nth-child(3){border-top:2px solid var(--wh)!important}
+#app :is(.pop,.side) .tk .tks *{color:var(--wh)!important;font-family:"IBM Plex Mono","Courier New",monospace!important}
+/* title bars */
+#app :is(.pop,.side) .tk h5,#app :is(.pop,.side) .tk h5 *{display:flex!important;background:var(--gr)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:2px 10px!important;margin:0 0 10px!important;font:700 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;letter-spacing:0!important;text-shadow:none!important}
+#app :is(.pop,.side) .tk h5 .em{background:transparent!important;padding:0 6px 0 0!important}
+#app :is(.pop,.side) .tk .tp b{font:700 20px/1.4 "IBM Plex Mono","Courier New",monospace!important;color:var(--wh)!important;text-shadow:none!important}
+#app :is(.pop,.side) .tk .tks .tp small{color:var(--cy)!important;font:500 13px "IBM Plex Mono",monospace!important;letter-spacing:.04em}
+#app :is(.pop,.side) .tk .tp .dot,#app :is(.pop,.side) .tk .tks:first-child .tp .dot{width:14px!important;height:14px!important;border:0!important;border-radius:0!important;background:var(--gn)!important;box-shadow:none!important}
+#app :is(.pop,.side) .tk .tp.r .dot{background:var(--rd)!important;box-shadow:none!important}
+#app :is(.pop,.side) .tk .tb{border-inline-start:4px dashed var(--gr)!important}
+#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{background:var(--rd)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;transform:none!important;font:700 13px/1.4 "IBM Plex Mono","Courier New",monospace!important;padding:1px 8px!important;box-shadow:none!important;opacity:1;letter-spacing:0}
+#app :is(.pop,.side) .tk .tks .rbn *{padding:0!important}
+#app :is(.pop,.side) .tk .tks .cty{background:transparent!important;color:var(--ye)!important;border:0!important;border-bottom:2px solid var(--ye)!important;border-radius:0!important;font:700 14px "IBM Plex Mono",monospace!important;padding:0 2px!important}
+#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .tk .tks:first-child .chip,#app :is(.pop,.side) .tk .tks .chip *{background:var(--bk)!important;color:var(--gn)!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 15px "IBM Plex Mono",monospace!important;padding:1px 8px!important}
+#app :is(.pop,.side) .tk .tks .chip *{padding:0!important}
+#app :is(.pop,.side) .tk .tinfo.c>div{background:transparent!important;border:0!important;border-bottom:1px dotted var(--gr)!important;border-radius:0!important;box-shadow:none!important;padding:3px 0!important;margin:0!important;font:500 15px "IBM Plex Mono",monospace!important}
+#app :is(.pop,.side) .tk .cocard{background:var(--bl2)!important;border:2px solid var(--ac)!important;border-radius:0!important;box-shadow:none!important;margin:10px 0!important;padding:8px 10px!important;animation:none!important}
+#app :is(.pop,.side) .tk .cocard:first-child{border-top:2px solid var(--ac)!important}
+#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b{background:var(--ac)!important;color:var(--bk)!important;font:700 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;border:0!important;border-radius:0!important;padding:1px 10px!important;letter-spacing:0!important}
+#app :is(.pop,.side) .tk .cocard .cohead b *{color:var(--bk)!important}
+#app :is(.pop,.side) .tk .cocard *{color:var(--wh)!important}
+#app :is(.pop,.side) .tk .cl{background:transparent!important;border-radius:0!important;font:500 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;padding:3px 0!important}
+#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{background:var(--gr)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;font:700 13px "IBM Plex Mono",monospace!important;padding:0 6px!important}
+#app :is(.pop,.side) .tk .cocard .mp *{padding:0!important}
+#app :is(.pop,.side) .tk .cocard b{color:var(--ye)!important}
+#app :is(.pop,.side) .tk .actions{padding:6px 14px 12px!important;display:flex;flex-wrap:wrap;gap:10px}
+#app :is(.pop,.side) .tk .actions .btn{background:var(--gr)!important;color:var(--bk)!important}
+#app :is(.pop,.side) .tk .actions .btn.primary{background:var(--ye)!important}
+#app :is(.pop,.side) .stips{background:var(--bk)!important;border:2px solid var(--gn)!important;outline:0!important;color:var(--gn)!important;font:500 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;box-shadow:none!important;margin:6px 14px!important}
+#app :is(.pop,.side) .stips *{color:var(--gn)!important}
+#app :is(.pop,.side) .stips h6{font:700 15px "IBM Plex Mono",monospace!important;color:var(--ye)!important;letter-spacing:0}
+#app :is(.pop,.side) .stips h6{color:var(--ye)!important}
+#app :is(.pop,.side) .stips .sx{background:var(--rd)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;font:700 13px "IBM Plex Mono",monospace!important;float:none!important;display:block;margin:0 0 8px!important}
+#app :is(.pop,.side) .stips::after{content:"_";animation:blk 1s steps(2) infinite}
+@keyframes blk{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){#app :is(.pop,.side) .stips::after{animation:none}}
+#app :is(.pop,.side) .alert,#app :is(.pop,.side) .gap{background:var(--bk)!important;border:2px solid var(--ye)!important;border-radius:0!important;color:var(--ye)!important}
+#app :is(.pop,.side) .alert *,#app :is(.pop,.side) .gap *{color:var(--ye)!important}
+#app :is(.pop,.side) .tk .tks h5,#app :is(.pop,.side) .tk .tks h5 *{color:#000!important;background:#C0C0C0!important}#app :is(.pop,.side) .tk .tks h5 .em{background:transparent!important}#app :is(.pop,.side) .tk .tks .tp b,#app :is(.pop,.side) .tk .tks .tp b *{color:#FFF!important;background:none!important}#app :is(.pop,.side) .tk .tks .tp b bdi{color:#FFF!important}#app :is(.pop,.side) .tk .tks .cohead b,#app :is(.pop,.side) .tk .tks .cocard .cohead b *{color:#000!important}#app :is(.pop,.side) .tk .tks .cocard .cohead b{background:var(--ac)!important}
 </style>
 
 <div id="app" dir="rtl" lang="he">
@@ -1268,7 +1426,7 @@ function stampHTML(l){return l.border?'<div class="stamp"><i>🚩 גבול</i><b
 function chipsHTML(l){
  return '<div class="chips"><span class="chip">'+l.h[0]+'–'+l.h[1]+' שעות</span><span class="chip">'+l.price+'</span>'
   +(l.danger?'<span class="tag danger">אזור מסוכן</span>':'')
-  +'<span class="tag '+l.flag+'">'+(l.flag==='ok'?'מקורות עקביים':'לאמת לפני נסיעה')+'</span></div>';
+  +'</div>';
 }
 function cosHTML(l){return '<div><div class="sub">חברות</div><div class="cos">'+l.cos.map(function(c){return '<span class="co"><bdi>'+c+'</bdi></span>'}).join('')+'</div></div>'}
 function detail(l,fromK){
@@ -1589,7 +1747,7 @@ function renderArrival(p){
 function stBit(x,nm,fallbackCity,en,gen){
  if(!x)return '<b>'+nm+'</b> <span class="sts">· '+fallbackCity+', רחוב לא ידוע (לאמת)</span> <a class="mp" href="'+mapq(nm+' bus station',en)+'" target="_blank" rel="noopener" title="חיפוש במפה">📍 מפה</a>';
  var i=x.n.indexOf(','),nmx=i>-1?x.n.slice(0,i).trim():x.n,st=i>-1?x.n.slice(i+1).trim():'';
- return '<b>'+nmx+'</b> <span class="sts">'+(st?'· '+st:'· רחוב לא ידוע (לאמת)')+(gen?' · תחנה ראשית, לאמת שהחברה יוצאת ממנה':'')+'</span> <a class="mp" href="'+mapq(x.code,en)+'" target="_blank" rel="noopener" title="פתח במפה">📍 מפה</a>';
+ return '<b>'+nmx+'</b> <span class="sts">'+(st?'· '+st:'')+'</span> <a class="mp" href="'+mapq(x.code,en)+'" target="_blank" rel="noopener" title="פתח במפה">📍 מפה</a>';
 }
 function coCards(l,fl,tl,A,B){
  var usedF={},usedT={};
@@ -1728,7 +1886,7 @@ function cleanVerify(root){
  if(!root||root._cl)return;root._cl=true;
  try{
   var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),ns=[],n;while(n=w.nextNode())if(n.nodeValue.indexOf('לאמת')>-1)ns.push(n);
-  ns.forEach(function(t){var v=t.nodeValue.replace(/\s*\([^()]*לאמת[^()]*\)/g,'').replace(/\s*[:,·]?\s*לאמת(?: (?:בשטח|בתחנה|מראש|לפני נסיעה|שהחברה יוצאת ממנה))?/g,'');t.nodeValue=v;
+  ns.forEach(function(t){var v=t.nodeValue.replace(/[^.]*לא אומתו[^.]*\.?/g,'').replace(/\s*·?\s*רחוב לא ידוע/g,'').replace(/\s*\([^()]*לאמת[^()]*\)/g,'').replace(/\s*[:,·]?\s*לאמת(?: (?:בשטח|בתחנה|מראש|לפני נסיעה|שהחברה יוצאת ממנה))?/g,'');t.nodeValue=v;
    var el=t.parentElement;if(el&&!v.trim()&&/(chip|tag|cov|co)\b/.test(el.className||'')&&el.children.length===0)el.style.display='none'});
  }catch(e){}
  root._cl=false;
@@ -1887,6 +2045,17 @@ $('#heropack').innerHTML=packIcon(150);
  sel.addEventListener('change',function(){if(sel.value){goToCountry(sel.value);sel.value=''}});
  var ctl=$('#ctl');ctl.parentNode.insertBefore(sel,ctl.nextSibling)})();
 
+
+/* inline steps & tips with close */
+document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('.tk button[data-pl]');if(!b)return;
+ ev.stopImmediatePropagation();ev.preventDefault();
+ var tk=b.closest('.tk'),ex=tk.querySelector('.stips');if(ex){ex.remove();b.setAttribute('aria-expanded','false');return}
+ var l=LEGS.filter(function(x){return x.id===b.dataset.pl})[0];if(!l)return;
+ var d=document.createElement('div');d.className='stips';d.setAttribute('role','region');d.setAttribute('aria-label','שלבים וטיפים');
+ d.innerHTML='<button type="button" class="sx" aria-label="סגירת שלבים וטיפים">✕ סגור</button><h6>שלבים</h6><ol>'+l.steps.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ol><h6>טיפים</h6><ul>'+l.tips.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>';
+ d.querySelector('.sx').addEventListener('click',function(){d.remove();b.setAttribute('aria-expanded','false');b.focus()});
+ var ac=tk.querySelector('.actions');ac.parentNode.insertBefore(d,ac);b.setAttribute('aria-expanded','true');
+},true);
 /* weather */
 var WXC={0:'שמיים בהירים ☀️',1:'בהיר ברובו 🌤',2:'מעונן חלקית ⛅',3:'מעונן ☁️',45:'ערפל 🌫',48:'ערפל 🌫',51:'טפטוף 🌦',53:'טפטוף 🌦',55:'טפטוף 🌦',61:'גשם קל 🌧',63:'גשם 🌧',65:'גשם כבד 🌧',80:'ממטרים 🌦',81:'ממטרים 🌧',82:'ממטרים חזקים ⛈',95:'סופת רעמים ⛈',96:'סופת רעמים ⛈',99:'סופת רעמים ⛈'};
 var wxKey=null;
