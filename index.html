@@ -2,7 +2,7 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>ממבה אפריקה</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&family=Secular+One&family=Suez+One&family=Press+Start+2P&family=VT323&family=Rubik+Mono+One&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&family=Secular+One&family=Suez+One&display=swap">
 <style>
 /* Layout: hero + a "board" with two modes (hop-by-hop trip builder, point-to-point), a sticky schematic map beside it, then reference sections. Border-stamp badges mark every crossing. */
 :root{
@@ -753,99 +753,90 @@ button,select,.btn{min-height:44px}
 #app :is(.pop,.side) .tk .tks:first-child::before{content:"★ ★ ★";position:absolute;top:4px;inset-inline-end:14px;font-size:11px;letter-spacing:.3em;color:var(--ac);opacity:.7}
 #app .pop::after{inset-inline-end:auto!important;inset-inline-start:auto!important;left:160px!important;right:auto!important;top:34px!important}
 
-/* ===== DOS / NORTON COMMANDER PANEL ===== */
-#app :is(.pop,.side){--bl:#0000AA;--bl2:#0000C8;--gr:#C0C0C0;--wh:#FFFFFF;--cy:#55FFFF;--ye:#FFFF55;--gn:#55FF55;--rd:#FF5555;--mg:#FF55FF;--bk:#000;
- background:var(--bl)!important;color:var(--wh)!important;border:0!important;border-radius:0!important;margin:6px!important;padding:12px!important;
- font-family:"IBM Plex Mono","Courier New",Courier,monospace!important;font-size:15px!important;font-weight:500;line-height:1.55;
- box-shadow:0 0 0 4px var(--gr),0 0 0 6px var(--bk),14px 14px 0 0 rgba(0,0,0,.6)!important;filter:none!important;gap:0!important}
-#app .pop::before{content:"C:\\MAMBA\\AFRICA> BUS.EXE"!important;display:block;height:auto!important;margin:-12px -12px 10px!important;padding:3px 10px!important;border:0!important;border-radius:0!important;background:var(--gr)!important;color:var(--bk)!important;font:700 14px/1.5 "IBM Plex Mono","Courier New",monospace!important;letter-spacing:.04em;direction:ltr;text-align:left}
-#app .pop::after{content:""!important;display:none!important}
-#app .side::before,#app .side::after{display:none!important}
-#app :is(.pop,.side) h3{font-family:"IBM Plex Mono","Courier New",monospace!important;font-size:18px!important;font-weight:700!important;color:var(--ye)!important;text-shadow:none!important;background:none!important}
-#app :is(.pop,.side) .btn{background:var(--gr)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;box-shadow:4px 4px 0 var(--bk)!important;font:700 14px/1.4 "IBM Plex Mono","Courier New",monospace!important;padding:6px 12px!important;transform:none!important}
-#app :is(.pop,.side) .btn *{color:var(--bk)!important}
-#app :is(.pop,.side) .btn:hover,#app :is(.pop,.side) .btn:focus-visible{background:var(--cy)!important;outline:2px solid var(--wh)!important}
-#app :is(.pop,.side) .btn.primary{background:var(--ye)!important}
-#app :is(.pop,.side) .pophd *,#app .pop>*:not(.tk),#app .pop>*:not(.tk) *{color:var(--wh)!important;font-family:inherit!important}
-#app .pop .asec h4{color:var(--ye)!important;font:700 15px "IBM Plex Mono","Courier New",monospace!important;text-shadow:none!important;border-bottom:2px solid var(--cy);padding-bottom:3px}
-/* boxes */
-#app :is(.pop,.side) .tk{--ac:var(--cy);margin:0 0 56px!important;background:var(--bl)!important;border:4px double var(--wh)!important;border-radius:0!important;outline:0!important;box-shadow:8px 8px 0 var(--bk)!important;animation:none!important;overflow:visible!important}
-#app :is(.pop,.side) .tk:nth-child(4n+2){--ac:var(--ye)}#app :is(.pop,.side) .tk:nth-child(4n+3){--ac:var(--gn)}#app :is(.pop,.side) .tk:nth-child(4n+4){--ac:var(--mg)}
-#app :is(.pop,.side) .tk:last-child{margin-bottom:8px!important}
-#app :is(.pop,.side) .tk:not(:last-child)::before{content:"";position:absolute;left:50%;bottom:-52px;height:46px;width:0;border-inline-start:4px dashed var(--wh)!important;transform:translateX(-50%);background:none!important;display:block}
-#app :is(.pop,.side) .tk:not(:last-child)::after{content:"▼"!important;position:absolute;left:50%;bottom:-54px;transform:translateX(-50%)!important;width:auto!important;height:auto!important;padding:0 8px;background:var(--bl)!important;color:var(--wh)!important;border:0!important;border-radius:0!important;font:700 18px/1 "IBM Plex Mono",monospace!important;animation:none!important;display:block!important;right:auto!important;margin:0!important}
-#app :is(.pop,.side) .tk .tks{background:transparent!important;border:0!important;border-radius:0!important;padding:10px 14px!important;margin:0!important;color:var(--wh)!important}
-#app :is(.pop,.side) .tk .tks:first-child{border-inline-start:0!important;background:transparent!important;padding-top:6px!important}
-#app :is(.pop,.side) .tk .tks:first-child::before,#app :is(.pop,.side) .tk .tks:first-child::after,#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(2)::after{display:none!important}
-#app :is(.pop,.side) .tk .tks:nth-child(2),#app :is(.pop,.side) .tk .tks:nth-child(3){border-top:2px solid var(--wh)!important}
-#app :is(.pop,.side) .tk .tks *{color:var(--wh)!important;font-family:"IBM Plex Mono","Courier New",monospace!important}
-/* title bars */
-#app :is(.pop,.side) .tk h5,#app :is(.pop,.side) .tk h5 *{display:flex!important;background:var(--gr)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:2px 10px!important;margin:0 0 10px!important;font:700 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;letter-spacing:0!important;text-shadow:none!important}
-#app :is(.pop,.side) .tk h5 .em{background:transparent!important;padding:0 6px 0 0!important}
-#app :is(.pop,.side) .tk .tp b{font:700 20px/1.4 "IBM Plex Mono","Courier New",monospace!important;color:var(--wh)!important;text-shadow:none!important}
-#app :is(.pop,.side) .tk .tks .tp small{color:var(--cy)!important;font:500 13px "IBM Plex Mono",monospace!important;letter-spacing:.04em}
-#app :is(.pop,.side) .tk .tp .dot,#app :is(.pop,.side) .tk .tks:first-child .tp .dot{width:14px!important;height:14px!important;border:0!important;border-radius:0!important;background:var(--gn)!important;box-shadow:none!important}
-#app :is(.pop,.side) .tk .tp.r .dot{background:var(--rd)!important;box-shadow:none!important}
-#app :is(.pop,.side) .tk .tb{border-inline-start:4px dashed var(--gr)!important}
-#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{background:var(--rd)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;transform:none!important;font:700 13px/1.4 "IBM Plex Mono","Courier New",monospace!important;padding:1px 8px!important;box-shadow:none!important;opacity:1;letter-spacing:0}
-#app :is(.pop,.side) .tk .tks .rbn *{padding:0!important}
-#app :is(.pop,.side) .tk .tks .cty{background:transparent!important;color:var(--ye)!important;border:0!important;border-bottom:2px solid var(--ye)!important;border-radius:0!important;font:700 14px "IBM Plex Mono",monospace!important;padding:0 2px!important}
-#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .tk .tks:first-child .chip,#app :is(.pop,.side) .tk .tks .chip *{background:var(--bk)!important;color:var(--gn)!important;border:0!important;border-radius:0!important;box-shadow:none!important;font:700 15px "IBM Plex Mono",monospace!important;padding:1px 8px!important}
-#app :is(.pop,.side) .tk .tks .chip *{padding:0!important}
-#app :is(.pop,.side) .tk .tinfo.c>div{background:transparent!important;border:0!important;border-bottom:1px dotted var(--gr)!important;border-radius:0!important;box-shadow:none!important;padding:3px 0!important;margin:0!important;font:500 15px "IBM Plex Mono",monospace!important}
-#app :is(.pop,.side) .tk .cocard{background:var(--bl2)!important;border:2px solid var(--ac)!important;border-radius:0!important;box-shadow:none!important;margin:10px 0!important;padding:8px 10px!important;animation:none!important}
-#app :is(.pop,.side) .tk .cocard:first-child{border-top:2px solid var(--ac)!important}
-#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b{background:var(--ac)!important;color:var(--bk)!important;font:700 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;border:0!important;border-radius:0!important;padding:1px 10px!important;letter-spacing:0!important}
-#app :is(.pop,.side) .tk .cocard .cohead b *{color:var(--bk)!important}
-#app :is(.pop,.side) .tk .cocard *{color:var(--wh)!important}
-#app :is(.pop,.side) .tk .cl{background:transparent!important;border-radius:0!important;font:500 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;padding:3px 0!important}
-#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{background:var(--gr)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;font:700 13px "IBM Plex Mono",monospace!important;padding:0 6px!important}
-#app :is(.pop,.side) .tk .cocard .mp *{padding:0!important}
-#app :is(.pop,.side) .tk .cocard b{color:var(--ye)!important}
-#app :is(.pop,.side) .tk .actions{padding:6px 14px 12px!important;display:flex;flex-wrap:wrap;gap:10px}
-#app :is(.pop,.side) .tk .actions .btn{background:var(--gr)!important;color:var(--bk)!important}
-#app :is(.pop,.side) .tk .actions .btn.primary{background:var(--ye)!important}
-#app :is(.pop,.side) .stips{background:var(--bk)!important;border:2px solid var(--gn)!important;outline:0!important;color:var(--gn)!important;font:500 15px/1.5 "IBM Plex Mono","Courier New",monospace!important;box-shadow:none!important;margin:6px 14px!important}
-#app :is(.pop,.side) .stips *{color:var(--gn)!important}
-#app :is(.pop,.side) .stips h6{font:700 15px "IBM Plex Mono",monospace!important;color:var(--ye)!important;letter-spacing:0}
-#app :is(.pop,.side) .stips h6{color:var(--ye)!important}
-#app :is(.pop,.side) .stips .sx{background:var(--rd)!important;color:var(--bk)!important;border:0!important;border-radius:0!important;font:700 13px "IBM Plex Mono",monospace!important;float:none!important;display:block;margin:0 0 8px!important}
-#app :is(.pop,.side) .stips::after{content:"_";animation:blk 1s steps(2) infinite}
-@keyframes blk{50%{opacity:0}}
-@media (prefers-reduced-motion:reduce){#app :is(.pop,.side) .stips::after{animation:none}}
-#app :is(.pop,.side) .alert,#app :is(.pop,.side) .gap{background:var(--bk)!important;border:2px solid var(--ye)!important;border-radius:0!important;color:var(--ye)!important}
-#app :is(.pop,.side) .alert *,#app :is(.pop,.side) .gap *{color:var(--ye)!important}
-#app :is(.pop,.side) .tk .tks h5,#app :is(.pop,.side) .tk .tks h5 *{color:#000!important;background:#33FF33!important}#app :is(.pop,.side) .tk .tks h5 .em{background:transparent!important}#app :is(.pop,.side) .tk .tks .tp b,#app :is(.pop,.side) .tk .tks .tp b *{color:#C8FFC8!important;background:none!important}#app :is(.pop,.side) .tk .tks .tp b bdi{color:#C8FFC8!important}#app :is(.pop,.side) .tk .tks .cohead b,#app :is(.pop,.side) .tk .tks .cocard .cohead b *{color:#000!important}#app :is(.pop,.side) .tk .tks .cocard .cohead b{background:var(--ac)!important}
+/* ===== OLD BUS TICKET — extra ===== */
+#app :is(.pop,.side) .tk .tks:first-child::before{content:"כרטיס נסיעה  ✦  ADMIT ONE"!important;display:block!important;position:static!important;margin:-12px -16px 10px -4px!important;padding:5px 12px!important;background:var(--ac)!important;color:#FBF2D8!important;font:700 12px/1.4 "Courier New",monospace!important;letter-spacing:.16em!important;text-align:center!important;opacity:1!important;transform:none!important;border-bottom:2px solid #2B2118}
+#app :is(.pop,.side) .tk .tks:nth-child(3)::after{content:"";display:block;height:30px;margin:12px auto 2px;width:70%;background:repeating-linear-gradient(90deg,#2B2118 0 2px,transparent 2px 4px,#2B2118 4px 5px,transparent 5px 9px,#2B2118 9px 12px,transparent 12px 14px,#2B2118 14px 15px,transparent 15px 19px);opacity:.85}
+#app :is(.pop,.side) .tk .tks:first-child{background:linear-gradient(90deg,rgba(150,100,30,.08),transparent 40%)!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2){background:repeating-linear-gradient(135deg,rgba(179,38,30,.05) 0 8px,transparent 8px 16px)!important}
+#app :is(.pop,.side) .tk{transform:rotate(-.4deg)}
+#app :is(.pop,.side) .tk:nth-child(even){transform:rotate(.5deg)}
+#app :is(.pop,.side) .tk .tp b{font-size:23px!important}
+#app :is(.pop,.side) .tk .tks:first-child .tp.g b::after{content:" ⟶";color:var(--ac)}
+@media (max-width:480px){#app :is(.pop,.side) .tk .tks:first-child::before{letter-spacing:.06em;font-size:11px}}
 
-/* ===== GREEN PHOSPHOR TERMINAL ===== */
-#app :is(.pop,.side){--bl:#031A06;--bl2:#062B0B;--gr:#33FF33;--wh:#8CFF8C;--cy:#33FF33;--ye:#C8FF5A;--gn:#33FF33;--rd:#FFB000;--mg:#7DFFB0;--bk:#001203;
- background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px),radial-gradient(ellipse at 50% 40%,#06300C,#021005 80%)!important;
- text-shadow:0 0 5px rgba(51,255,51,.55);box-shadow:0 0 0 4px #33FF33,0 0 0 6px #001203,0 0 28px 8px rgba(51,255,51,.35),14px 14px 0 0 rgba(0,0,0,.6)!important}
-#app .pop::before{content:"C:\\MAMBA\\AFRICA> BUS.EXE ▌"!important;background:#33FF33!important;color:#001203!important;text-shadow:none!important}
-#app :is(.pop,.side) .tk{background:rgba(3,26,6,.85)!important;border:4px double #33FF33!important;box-shadow:0 0 14px rgba(51,255,51,.35),8px 8px 0 #001203!important}
-#app :is(.pop,.side) .tk .tks,#app :is(.pop,.side) .tk .tks *{text-shadow:0 0 5px rgba(51,255,51,.5)}
-#app :is(.pop,.side) .tk .tks h5,#app :is(.pop,.side) .tk .tks h5 *,#app :is(.pop,.side) .btn,#app :is(.pop,.side) .btn *,#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *,#app :is(.pop,.side) .stips .sx,#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{text-shadow:none!important}
-#app :is(.pop,.side) .tk .tks .tp small{color:#6BFF6B!important}
-#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{background:#FFB000!important;color:#001203!important}
-#app :is(.pop,.side) .tk .tks .cty{color:#C8FF5A!important;border-bottom-color:#C8FF5A!important}
-#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .tk .tks:first-child .chip,#app :is(.pop,.side) .tk .tks .chip *{background:#001203!important;color:#33FF33!important;border:1px solid #33FF33!important}
-#app :is(.pop,.side) .tk .tp .dot,#app :is(.pop,.side) .tk .tks:first-child .tp .dot{background:#33FF33!important;box-shadow:0 0 8px #33FF33!important}
-#app :is(.pop,.side) .tk .tp.r .dot{background:#FFB000!important;box-shadow:0 0 8px #FFB000!important}
-#app :is(.pop,.side) .tk .cocard{background:rgba(6,43,11,.9)!important}
-#app :is(.pop,.side) .tk .cocard *{color:#8CFF8C!important}
-#app :is(.pop,.side) .tk .cocard b{color:#C8FF5A!important}
-#app :is(.pop,.side) .tk .cocard .cohead b{color:#001203!important}
-#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{background:#33FF33!important;color:#001203!important}
-#app :is(.pop,.side) .btn,#app :is(.pop,.side) .tk .actions .btn{background:#33FF33!important;color:#001203!important;box-shadow:4px 4px 0 #001203!important}
-#app :is(.pop,.side) .btn.primary,#app :is(.pop,.side) .tk .actions .btn.primary{background:#C8FF5A!important}
-#app :is(.pop,.side) .btn:hover,#app :is(.pop,.side) .btn:focus-visible{background:#fff!important}
-#app :is(.pop,.side) .stips{background:#000!important;border:2px solid #33FF33!important}
-#app :is(.pop,.side) .stips .sx{background:#FFB000!important;color:#001203!important}
-#app :is(.pop,.side) h3{color:#C8FF5A!important}
-#app .pop .asec h4{color:#C8FF5A!important}
-#app .pop>*:not(.tk),#app .pop>*:not(.tk) *{color:#8CFF8C!important}
-#app .pop .btn,#app .pop .btn *{color:#001203!important}
-@media (prefers-reduced-motion:no-preference){#app .pop::after{content:"";display:block!important;position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 0,rgba(51,255,51,.06) 50%,transparent 100%) 0 0/100% 90px;animation:scan 6s linear infinite;mix-blend-mode:screen;border:0!important;transform:none!important;left:0!important;top:0!important;width:auto;height:auto}@keyframes scan{from{background-position:0 -90px}to{background-position:0 100vh}}}
+/* ===== AFRICAN PATTERN PANEL (kente / ndebele / shuka / mudcloth) ===== */
+#app :is(.pop,.side){--sand:#F6E3BE;--ink:#1C1208;--terra:#C2552B;--gold:#F2B705;--grn:#0B7A3B;--red:#C8102E;--ind:#1B2A6B;
+ background:radial-gradient(circle at 20% 10%,rgba(194,85,43,.14) 0 40px,transparent 80px),repeating-linear-gradient(135deg,rgba(28,18,8,.05) 0 2px,transparent 2px 14px),#F6E3BE!important;
+ border:6px solid var(--ink)!important;border-radius:12px!important;box-shadow:8px 8px 0 var(--terra),8px 8px 0 3px var(--ink)!important;font-family:"Heebo",system-ui,sans-serif!important;color:var(--ink)!important;text-shadow:none!important}
+#app .pop::before{content:""!important;display:block!important;height:26px!important;margin:-10px -12px 12px!important;border:0!important;border-bottom:5px solid var(--ink)!important;border-radius:6px 6px 0 0!important;background:repeating-linear-gradient(90deg,#111 0 8px,var(--gold) 8px 24px,var(--grn) 24px 40px,var(--red) 40px 56px,#111 56px 64px)!important}
+#app .pop::after{content:""!important;display:none!important}
+#app :is(.pop,.side) h3{font-family:"Suez One",Georgia,serif!important;color:var(--ink)!important;text-shadow:none!important}
+#app :is(.pop,.side) .btn{font-family:"Heebo",system-ui,sans-serif!important;font-weight:800!important;background:var(--gold)!important;color:var(--ink)!important;border:3px solid var(--ink)!important;border-radius:999px!important;box-shadow:3px 3px 0 var(--ink)!important}
+#app :is(.pop,.side) .btn *{color:var(--ink)!important}
+#app :is(.pop,.side) .btn.primary{background:var(--terra)!important;color:#fff!important}
+#app :is(.pop,.side) .btn.primary *{color:#fff!important}
+/* cards as pattern-framed panels */
+#app :is(.pop,.side) .tk{--p:repeating-linear-gradient(90deg,#111 0 6px,#F2B705 6px 18px,#0B7A3B 18px 30px,#C8102E 30px 42px);--ac:#0B7A3B;--tint:#FFF7E2;
+ margin:0 0 76px!important;border:12px solid transparent!important;border-radius:6px!important;transform:none!important;outline:0!important;
+ background:linear-gradient(var(--tint),var(--tint)) padding-box,var(--p) border-box!important;box-shadow:0 0 0 3px var(--ink),7px 7px 0 3px var(--ink)!important;overflow:visible!important;animation:none!important}
+#app :is(.pop,.side) .tk:nth-child(4n+2){--p:conic-gradient(from 135deg at 50% 50%,#1D4ED8 0 25%,#FACC15 0 50%,#DC2626 0 75%,#111 0) 0 0/24px 24px;--ac:#1D4ED8;--tint:#F3F7FF}
+#app :is(.pop,.side) .tk:nth-child(4n+3){--p:repeating-linear-gradient(0deg,rgba(255,255,255,.85) 0 2px,transparent 2px 13px),repeating-linear-gradient(90deg,rgba(255,255,255,.85) 0 2px,transparent 2px 13px),repeating-linear-gradient(90deg,rgba(20,20,110,.9) 0 5px,transparent 5px 26px),#C8102E;--ac:#C8102E;--tint:#FFF3EE}
+#app :is(.pop,.side) .tk:nth-child(4n+4){--p:linear-gradient(135deg,#1C1208 25%,transparent 25%) -8px 0/16px 16px,linear-gradient(225deg,#1C1208 25%,transparent 25%) -8px 0/16px 16px,#E2C48B;--ac:#8A4B12;--tint:#FBF1DA}
+#app :is(.pop,.side) .tk:last-child{margin-bottom:8px!important}
+#app :is(.pop,.side) .tk:not(:last-child)::before{content:"";position:absolute;left:50%;bottom:-70px;height:62px;width:22px;transform:translateX(-50%);border:0!important;background:linear-gradient(45deg,var(--ac) 25%,transparent 25% 75%,var(--ac) 75%) 0 0/22px 22px,linear-gradient(45deg,var(--ac) 25%,transparent 25% 75%,var(--ac) 75%) 11px 11px/22px 22px;opacity:.9;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+#app :is(.pop,.side) .tk:not(:last-child)::after{content:""!important;position:absolute;left:50%;bottom:-66px;width:0!important;height:0!important;transform:translateX(-50%)!important;border:0!important;background:none!important;display:block}
+#app :is(.pop,.side) .tk .tks{background:transparent!important;border:0!important;border-radius:0!important;padding:12px 14px!important;margin:0!important;position:relative;color:var(--ink)!important}
+#app :is(.pop,.side) .tk .tks:first-child{border-inline-start:0!important;background:transparent!important}
+#app :is(.pop,.side) .tk .tks:first-child::before{content:"✺ ✺ ✺"!important;display:block!important;position:static!important;margin:-8px 0 6px!important;padding:0!important;background:none!important;border:0!important;color:var(--ac)!important;font:400 14px/1 serif!important;letter-spacing:.5em!important;text-align:center!important;opacity:.9;transform:none!important}
+#app :is(.pop,.side) .tk .tks:first-child::after,#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(2)::after,#app :is(.pop,.side) .tk .tks:nth-child(3)::after{display:none!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2),#app :is(.pop,.side) .tk .tks:nth-child(3){border-top:0!important;background:none!important;margin-top:0!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(3)::before{content:""!important;display:block!important;position:static!important;width:auto!important;height:7px!important;margin:-8px 0 10px!important;border:0!important;border-radius:0!important;background:var(--p)!important;background-size:auto!important}
+#app :is(.pop,.side) .tk .tks *{color:var(--ink)!important}
+#app :is(.pop,.side) .tk .tks h5,#app :is(.pop,.side) .tk .tks h5 *{display:inline-flex!important;background:var(--ink)!important;color:var(--gold)!important;border:0!important;border-radius:999px!important;box-shadow:3px 3px 0 var(--ac)!important;padding:3px 14px!important;margin:0 0 10px!important;font:400 15px/1.5 "Suez One",Georgia,serif!important;letter-spacing:.03em!important;text-shadow:none!important}
+#app :is(.pop,.side) .tk .tks h5 .em{background:transparent!important;box-shadow:none!important;padding:0 0 0 6px!important}
+#app :is(.pop,.side) .tk .tks .tp b,#app :is(.pop,.side) .tk .tks .tp b *{font:400 24px/1.3 "Suez One",Georgia,serif!important;color:var(--ink)!important;background:none!important}
+#app :is(.pop,.side) .tk .tks .tp small{color:var(--ac)!important;font:800 12px "Heebo",sans-serif!important;letter-spacing:.08em}
+#app :is(.pop,.side) .tk .tp .dot,#app :is(.pop,.side) .tk .tks:first-child .tp .dot{width:20px!important;height:20px!important;border:4px solid var(--ink)!important;border-radius:50%!important;background:var(--gold)!important;box-shadow:none!important}
+#app :is(.pop,.side) .tk .tp.r .dot{background:var(--ac)!important}
+#app :is(.pop,.side) .tk .tb{border-inline-start:6px dotted var(--ac)!important}
+#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{background:var(--ink)!important;color:var(--gold)!important;border:0!important;border-radius:999px!important;transform:none!important;font:800 13px/1.4 "Heebo",sans-serif!important;padding:2px 12px!important;box-shadow:0 0 0 3px var(--gold) inset,3px 3px 0 var(--ac)!important;letter-spacing:.02em;opacity:1}
+#app :is(.pop,.side) .tk .tks .rbn *{box-shadow:none!important;padding:0!important}
+#app :is(.pop,.side) .tk .tks .cty{background:var(--gold)!important;color:var(--ink)!important;border:2px solid var(--ink)!important;border-radius:999px!important;font:800 13px "Heebo",sans-serif!important;padding:0 10px!important}
+#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .tk .tks:first-child .chip,#app :is(.pop,.side) .tk .tks .chip *{background:#fff!important;color:var(--ink)!important;border:3px solid var(--ink)!important;border-radius:999px!important;box-shadow:2px 2px 0 var(--ac)!important;font:800 14px "Heebo",sans-serif!important;padding:1px 12px!important}
+#app :is(.pop,.side) .tk .tks .chip *{border:0!important;box-shadow:none!important;padding:0!important}
+#app :is(.pop,.side) .tk .tinfo.c>div{background:#fff!important;border:3px solid var(--ink)!important;border-radius:12px!important;box-shadow:3px 3px 0 var(--ac)!important;padding:4px 12px!important;margin:7px 0!important;font:700 14px "Heebo",sans-serif!important}
+#app :is(.pop,.side) .tk .cocard{background:#fff!important;border:3px solid var(--ink)!important;border-radius:14px!important;box-shadow:4px 4px 0 var(--ac)!important;margin:12px 0!important;padding:8px 12px!important}
+#app :is(.pop,.side) .tk .cocard:first-child{border-top:3px solid var(--ink)!important}
+#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b{background:var(--ac)!important;color:#fff!important;font:400 16px/1.5 "Suez One",Georgia,serif!important;border:2px solid var(--ink)!important;border-radius:999px!important;padding:0 14px!important;letter-spacing:.02em!important}
+#app :is(.pop,.side) .tk .cocard .cohead b *{color:#fff!important}
+#app :is(.pop,.side) .tk .cl{background:transparent!important;border-radius:8px!important;font:600 13.5px/1.5 "Heebo",sans-serif!important;padding:3px 6px!important;margin:2px 0}
+#app :is(.pop,.side) .tk .cl:nth-child(even){background:#E4F4E0!important}
+#app :is(.pop,.side) .tk .cl:nth-child(odd){background:#FDE6E1!important}
+#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{background:var(--gold)!important;color:var(--ink)!important;border:2px solid var(--ink)!important;border-radius:999px!important;font:800 12px "Heebo",sans-serif!important;padding:0 8px!important}
+#app :is(.pop,.side) .tk .cocard .mp *{border:0!important;padding:0!important}
+#app :is(.pop,.side) .tk .cocard *{color:var(--ink)!important}
+#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard .cohead b *{color:#fff!important}
+#app :is(.pop,.side) .tk .actions{padding:6px 14px 12px!important;display:flex;flex-wrap:wrap;gap:10px}
+#app :is(.pop,.side) .tk .actions .btn{background:var(--gold)!important;color:var(--ink)!important}
+#app :is(.pop,.side) .tk .actions .btn.primary{background:var(--ink)!important;color:var(--gold)!important}
+#app :is(.pop,.side) .tk .actions .btn.primary *{color:var(--gold)!important}
+#app :is(.pop,.side) .stips{background:#fff!important;border:3px solid var(--ink)!important;outline:0!important;border-radius:12px!important;box-shadow:4px 4px 0 var(--ac)!important;font:600 13.5px/1.5 "Heebo",sans-serif!important;color:var(--ink)!important}
+#app :is(.pop,.side) .stips *{color:var(--ink)!important}
+#app :is(.pop,.side) .stips h6{font:400 15px "Suez One",Georgia,serif!important;color:var(--ac,#C2552B)!important}
+#app :is(.pop,.side) .stips .sx{background:var(--ink)!important;color:var(--gold)!important;border-radius:999px!important;font:800 12px "Heebo",sans-serif!important}
+#app :is(.pop,.side) .stips .sx{color:#F2B705!important}
+#app .pop .asec h4{font:400 16px "Suez One",Georgia,serif!important;color:var(--terra)!important;border-bottom:3px solid var(--ink)}
+#app :is(.pop,.side) .tk .tks:first-child h5,#app :is(.pop,.side) .tk .tks:first-child h5 *,#app :is(.pop,.side) .tk .tks:nth-child(n) h5,#app :is(.pop,.side) .tk .tks:nth-child(n) h5 *{color:#F2B705!important}#app :is(.pop,.side) .tk .tks:nth-child(n) h5 .em{background:transparent!important}
+
+@media (max-width:1099px){#app .mapbox .legend{top:58px!important;bottom:auto!important;inset-inline-end:10px!important;inset-inline-start:auto!important;transform:none!important;font-size:12px!important}
+#app .mapbox .readout{position:static!important;display:block!important;margin:8px 10px 2px!important;text-align:center;font-size:13px}
+#app .mapbox .mapctl{top:58px!important;inset-inline-start:10px!important;inset-inline-end:auto!important;gap:6px!important}
+#app .mapbox .mapctl .btn{min-width:40px!important;min-height:40px!important;padding:4px 8px!important;font-size:13px!important}
+#app .mapbox .regnav{flex-wrap:nowrap!important;overflow-x:auto!important;max-width:calc(100% - 20px)!important;left:10px!important;right:10px!important;justify-content:flex-start;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+#app .mapbox .regnav .btn{flex:none;min-height:40px!important;white-space:nowrap}}
+@media (max-width:560px){#app .mapbox .legend{display:none!important}#app .mapbox .mapctl{top:56px!important}
+#app .controls,#app #ctl{padding:8px!important}#app .od{gap:6px!important}#app .od select{min-height:42px}
+#app .stage .mapbox svg{height:62vh!important;min-height:340px}}
 </style>
 
 <div id="app" dir="rtl" lang="he">
