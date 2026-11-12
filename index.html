@@ -2,7 +2,7 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>ממבה אפריקה</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&family=Secular+One&family=Suez+One&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&family=Secular+One&family=Suez+One&family=VT323&family=Share+Tech+Mono&family=Black+Ops+One&display=swap">
 <style>
 /* Layout: hero + a "board" with two modes (hop-by-hop trip builder, point-to-point), a sticky schematic map beside it, then reference sections. Border-stamp badges mark every crossing. */
 :root{
@@ -837,6 +837,168 @@ button,select,.btn{min-height:44px}
 @media (max-width:560px){#app .mapbox .legend{display:none!important}#app .mapbox .mapctl{top:56px!important}
 #app .controls,#app #ctl{padding:8px!important}#app .od{gap:6px!important}#app .od select{min-height:42px}
 #app .stage .mapbox svg{height:62vh!important;min-height:340px}}
+
+/* ===== AFRICAN VIVID (less white) ===== */
+#app :is(.pop,.side){background:radial-gradient(circle at 12px 12px,#F2B705 0 4px,transparent 5px) 0 0/36px 36px,linear-gradient(45deg,rgba(0,0,0,.14) 25%,transparent 25% 75%,rgba(0,0,0,.14) 75%) 0 0/36px 36px,#C2552B!important}
+#app :is(.pop,.side) .tk{--tint:#F8C537!important}
+#app :is(.pop,.side) .tk:nth-child(4n+2){--tint:#7FD1A0!important}
+#app :is(.pop,.side) .tk:nth-child(4n+3){--tint:#F4A06B!important}
+#app :is(.pop,.side) .tk:nth-child(4n+4){--tint:#9DB7F2!important}
+#app :is(.pop,.side) .tk .tinfo.c>div,#app :is(.pop,.side) .tk .cocard,#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .stips{background:#FFF3D6!important}
+#app :is(.pop,.side) .tk .cl:nth-child(even){background:rgba(11,122,59,.16)!important}
+#app :is(.pop,.side) .tk .cl:nth-child(odd){background:rgba(200,16,46,.13)!important}
+#app :is(.pop,.side) h3{color:#FFF3D6!important;text-shadow:2px 2px 0 #1C1208!important}
+#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions),#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions) *{color:#1C1208!important;opacity:1!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(3)::before{background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 12px,var(--ac) 12px 20px,transparent 20px 24px)!important}
+
+/* ===== MILITARY 80s DOS ===== */
+#app :is(.pop,.side){--ink:#12160B;--ol:#3C4426;--kh:#D6D1A2;--kh2:#ECE8C4;--amb:#FFB000;--phos:#6BFF6B;--ac:#4B5320;--ind:#000080;
+ --mono:"Share Tech Mono","IBM Plex Mono","Courier New",monospace;--stencil:"Black Ops One",Impact,"Heebo",sans-serif;
+ background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 4px),radial-gradient(ellipse at 30% 20%,#56603a,transparent 60%),#3C4426!important;
+ border:5px solid #12160B!important;border-radius:0!important;box-shadow:6px 6px 0 #12160B!important;font-family:var(--mono)!important;color:var(--ink)!important}
+#app .pop::before{height:30px!important;margin:-10px -12px 12px!important;border:0!important;border-bottom:4px solid #12160B!important;border-radius:0!important;
+ background:repeating-linear-gradient(-45deg,#FFB000 0 14px,#12160B 14px 28px)!important}
+#app :is(.pop,.side) h3{font-family:var(--stencil)!important;letter-spacing:.06em;color:var(--amb)!important;text-shadow:2px 2px 0 #000!important}
+#app :is(.pop,.side) .btn{font-family:var(--mono)!important;font-weight:700!important;background:var(--kh)!important;color:var(--ink)!important;border:3px solid #12160B!important;border-radius:0!important;box-shadow:3px 3px 0 #000!important;text-transform:uppercase}
+#app :is(.pop,.side) .btn.primary{background:var(--amb)!important;color:#000!important}
+#app :is(.pop,.side) .btn.primary *{color:#000!important}
+#app :is(.pop,.side) .tk{--p:repeating-linear-gradient(-45deg,#FFB000 0 10px,#12160B 10px 20px);--ac:#4B5320;--tint:#D6D1A2!important;border-radius:0!important;border-width:10px!important;
+ box-shadow:0 0 0 3px #000,6px 6px 0 3px #000!important}
+#app :is(.pop,.side) .tk:nth-child(4n+2){--p:radial-gradient(circle at 30% 40%,#2F3A1C 0 28%,transparent 29%) 0 0/34px 30px,radial-gradient(circle at 75% 70%,#7A6B3A 0 26%,transparent 27%) 0 0/30px 34px,#55612F;--ac:#2F3A1C;--tint:#CFCF9A!important}
+#app :is(.pop,.side) .tk:nth-child(4n+3){--p:repeating-linear-gradient(90deg,#12160B 0 8px,#C8102E 8px 12px,#12160B 12px 20px,#D6D1A2 20px 24px);--ac:#8B1020;--tint:#E0D6A8!important}
+#app :is(.pop,.side) .tk:nth-child(4n+4){--p:radial-gradient(circle at 30% 40%,#3B3B2A 0 28%,transparent 29%) 0 0/34px 30px,radial-gradient(circle at 75% 70%,#8A8F5A 0 26%,transparent 27%) 0 0/30px 34px,#5E6A3A;--ac:#3B4A22;--tint:#C9CC98!important}
+#app :is(.pop,.side) .tk:not(:last-child)::before{background:repeating-linear-gradient(0deg,#FFB000 0 8px,#12160B 8px 16px)!important;width:14px!important;border-radius:0!important}
+#app :is(.pop,.side) .tk .tks,#app :is(.pop,.side) .tk .tks *{font-family:var(--mono)!important;color:var(--ink)!important}
+#app :is(.pop,.side) .tk .tks:first-child::before{content:">> TOP SECRET // BORDER OPS <<"!important;font:400 14px var(--stencil)!important;letter-spacing:.12em;color:#8B1020!important;text-align:center;border:2px dashed #8B1020!important;padding:2px 6px!important;margin:-6px 0 10px!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(3)::before{background:repeating-linear-gradient(90deg,#12160B 0 10px,transparent 10px 16px)!important;height:4px!important}
+#app :is(.pop,.side) .tk .tks h5,#app :is(.pop,.side) .tk .tks h5 *,#app :is(.pop,.side) .tk .tks:nth-child(n) h5,#app :is(.pop,.side) .tk .tks:nth-child(n) h5 *{background:#000080!important;color:#fff!important;border-radius:0!important;box-shadow:3px 3px 0 #000!important;font:400 16px var(--stencil)!important;letter-spacing:.08em}
+#app :is(.pop,.side) .tk .tks h5 .em,#app :is(.pop,.side) .tk .tks:nth-child(n) h5 .em{background:transparent!important;box-shadow:none!important}
+#app :is(.pop,.side) .tk .tks .tp b,#app :is(.pop,.side) .tk .tks .tp b *{font:400 24px var(--stencil)!important;color:#12160B!important;letter-spacing:.03em}
+#app :is(.pop,.side) .tk .tks .tp small{color:#8B1020!important;font:700 12px var(--mono)!important;letter-spacing:.1em}
+#app :is(.pop,.side) .tk .tp .dot,#app :is(.pop,.side) .tk .tks:first-child .tp .dot{border-radius:0!important;background:var(--amb)!important;border:3px solid #000!important}
+#app :is(.pop,.side) .tk .tp.r .dot{background:#C8102E!important}
+#app :is(.pop,.side) .tk .tb{border-inline-start:5px dashed #12160B!important}
+#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{background:#12160B!important;color:var(--amb)!important;border-radius:0!important;font:700 13px var(--mono)!important}
+#app :is(.pop,.side) .tk .tks .cty{background:var(--amb)!important;color:#000!important;border:2px solid #000!important;border-radius:0!important;font:700 13px var(--mono)!important}
+#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .tk .tks:first-child .chip,#app :is(.pop,.side) .tk .tks .chip *{background:#12160B!important;color:var(--phos)!important;border:2px solid #000!important;border-radius:0!important;box-shadow:none!important;font:700 14px var(--mono)!important}
+#app :is(.pop,.side) .tk .tks .chip *{border:0!important;color:var(--phos)!important}
+#app :is(.pop,.side) .tk .tinfo.c>div,#app :is(.pop,.side) .tk .cocard,#app :is(.pop,.side) .stips{background:var(--kh2)!important;border:3px solid #12160B!important;border-radius:0!important;box-shadow:4px 4px 0 #12160B!important;font-family:var(--mono)!important;color:var(--ink)!important}
+#app :is(.pop,.side) .tk .tinfo.c>div{font:700 14px var(--mono)!important}
+#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b{background:#12160B!important;color:var(--amb)!important;border:0!important;border-radius:0!important;font:400 16px var(--stencil)!important;letter-spacing:.05em}
+#app :is(.pop,.side) .tk .cocard .cohead b *,#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b *{color:var(--amb)!important}
+#app :is(.pop,.side) .tk .cl{border-radius:0!important;font:600 13.5px/1.5 var(--mono)!important}
+#app :is(.pop,.side) .tk .cl:nth-child(even){background:rgba(75,83,32,.22)!important}
+#app :is(.pop,.side) .tk .cl:nth-child(odd){background:rgba(139,16,32,.14)!important}
+#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{background:var(--amb)!important;color:#000!important;border:2px solid #000!important;border-radius:0!important;font:700 12px var(--mono)!important}
+#app :is(.pop,.side) .tk .cocard .mp *{border:0!important}
+#app :is(.pop,.side) .tk .actions .btn{background:var(--kh)!important;color:#000!important}
+#app :is(.pop,.side) .tk .actions .btn.primary,#app :is(.pop,.side) .tk .actions .btn.primary *{background:#12160B!important;color:var(--phos)!important}
+#app :is(.pop,.side) .stips *{color:var(--ink)!important;font-family:var(--mono)!important}
+#app :is(.pop,.side) .stips h6{font:400 15px var(--stencil)!important;color:#8B1020!important}
+#app :is(.pop,.side) .stips .sx{background:#12160B!important;color:var(--amb)!important;border-radius:0!important}
+#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions),#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions) *{font-family:var(--mono)!important;border-radius:0!important}
+
+/* ===== MILITARY DOS GAME v2 (dark CRT) ===== */
+#app :is(.pop,.side){--bg:#0B120A;--bg2:#142010;--ph:#9BFF8A;--tx:#E6F4C8;--amb:#FFB000;--red:#FF5A3C;--ol:#6B7A3A;
+ background:repeating-linear-gradient(0deg,rgba(0,0,0,.35) 0 1px,transparent 1px 3px),radial-gradient(ellipse at 50% 0,#2A3A18,transparent 70%),#1A2410!important;
+ border:6px double #8A9A4A!important;box-shadow:0 0 0 3px #000,0 0 22px rgba(155,255,138,.25),7px 7px 0 3px #000!important}
+#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions){background:var(--bg)!important;border:3px double var(--ol)!important;box-shadow:none!important}
+#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions),#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions) *{color:var(--ph)!important}
+#app :is(.pop,.side) .tk{--tint:#0B120A!important;--ac:#9BFF8A;border-width:10px!important;box-shadow:0 0 0 3px #000,0 0 18px rgba(155,255,138,.18),6px 6px 0 3px #000!important;
+ background:repeating-linear-gradient(0deg,rgba(0,0,0,.30) 0 1px,transparent 1px 3px),linear-gradient(var(--tint),var(--tint)) padding-box,var(--p) border-box!important}
+#app :is(.pop,.side) .tk:nth-child(4n+2),#app :is(.pop,.side) .tk:nth-child(4n+3),#app :is(.pop,.side) .tk:nth-child(4n+4){--tint:#0B120A!important}
+#app :is(.pop,.side) .tk:nth-child(4n+2){--ac:#FFB000}
+#app :is(.pop,.side) .tk:nth-child(4n+3){--ac:#FF7A5C}
+#app :is(.pop,.side) .tk:nth-child(4n+4){--ac:#7FD8FF}
+#app :is(.pop,.side) .tk .tks,#app :is(.pop,.side) .tk .tks *{color:var(--tx)!important;text-shadow:0 0 4px rgba(155,255,138,.25)}
+#app :is(.pop,.side) .tk .tks:first-child::before{content:"BORDER CROSSING"!important;direction:ltr!important;unicode-bidi:isolate!important;white-space:nowrap!important;color:var(--amb)!important;border:0!important;border-bottom:2px dashed var(--amb)!important;text-align:center;font:400 15px var(--stencil)!important;letter-spacing:.18em;padding:0 0 6px!important;margin:-6px 0 12px!important;animation:none!important}
+#app :is(.pop,.side) .tk .tks h5,#app :is(.pop,.side) .tk .tks h5 *,#app :is(.pop,.side) .tk .tks:nth-child(n) h5,#app :is(.pop,.side) .tk .tks:nth-child(n) h5 *{background:var(--ph)!important;color:#0B120A!important;box-shadow:3px 3px 0 #000!important;text-shadow:none!important;font:400 16px var(--stencil)!important}
+#app :is(.pop,.side) .tk .tks h5::before{content:"▶ "}
+#app :is(.pop,.side) .tk .tks h5 .em,#app :is(.pop,.side) .tk .tks:nth-child(n) h5 .em{background:transparent!important;box-shadow:none!important}
+#app :is(.pop,.side) .tk .tks .tp b,#app :is(.pop,.side) .tk .tks .tp b *{color:#fff!important;text-shadow:0 0 8px rgba(155,255,138,.5)!important}
+#app :is(.pop,.side) .tk .tks .tp small{color:var(--amb)!important}
+#app :is(.pop,.side) .tk .tks .tp:first-child b::after{content:"█";color:var(--ph);margin-inline-start:4px;animation:mdblink 1s steps(1) infinite}
+@keyframes mdblink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){#app .tk .tks .tp:first-child b::after{animation:none}}
+#app :is(.pop,.side) .tk .tb{border-inline-start:5px dashed var(--ph)!important}
+#app :is(.pop,.side) .tk .tks .cty{background:var(--amb)!important;color:#000!important;text-shadow:none!important}
+#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{background:var(--amb)!important;color:#000!important;text-shadow:none!important}
+#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .tk .tks:first-child .chip,#app :is(.pop,.side) .tk .tks .chip *{background:#000!important;color:var(--ph)!important;border:2px solid var(--ph)!important}
+#app :is(.pop,.side) .tk .tks .chip *{border:0!important}
+#app :is(.pop,.side) .tk .tinfo.c>div,#app :is(.pop,.side) .tk .cocard,#app :is(.pop,.side) .stips{background:var(--bg2)!important;border:2px solid var(--ol)!important;box-shadow:4px 4px 0 #000!important;color:var(--tx)!important}
+#app :is(.pop,.side) .tk .tinfo.c>div *{color:var(--tx)!important}
+#app :is(.pop,.side) .tk .cocard *,#app :is(.pop,.side) .stips *{color:var(--tx)!important}
+#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b,#app :is(.pop,.side) .tk .cocard .cohead b *{background:var(--amb)!important;color:#000!important;text-shadow:none!important}
+#app :is(.pop,.side) .tk .cl:nth-child(even){background:rgba(155,255,138,.09)!important}
+#app :is(.pop,.side) .tk .cl:nth-child(odd){background:rgba(255,176,0,.09)!important}
+#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{background:var(--ph)!important;color:#000!important}
+#app :is(.pop,.side) .stips h6{color:var(--amb)!important}
+#app :is(.pop,.side) .stips .sx{background:var(--red)!important;color:#000!important}
+#app :is(.pop,.side) .tk .actions .btn{background:var(--amb)!important;color:#000!important}
+#app :is(.pop,.side) .tk .actions .btn.primary,#app :is(.pop,.side) .tk .actions .btn.primary *{background:var(--ph)!important;color:#000!important}
+#app :is(.pop,.side) .tk:not(:last-child)::before{background:repeating-linear-gradient(0deg,var(--ph) 0 6px,transparent 6px 12px)!important}
+#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b *,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b{color:#000!important;background:var(--amb)!important}
+@media (max-width:560px){#app :is(.pop,.side) .tk .tks:first-child::before{font-size:12px!important;letter-spacing:.06em!important}}
+
+/* ===== DOS v3: flat, fewer boxes, real gaps ===== */
+#app :is(.pop,.side) .tk{margin:0 0 44px!important;border-width:6px!important;box-shadow:0 0 0 2px #000!important}
+#app :is(.pop,.side) .tk:last-child{margin-bottom:6px!important}
+#app :is(.pop,.side) .tk:not(:last-child)::before{display:none!important}
+#app :is(.pop,.side) .tk:not(:last-child)::after{display:none!important}
+#app :is(.pop,.side) .tk .tks:first-child::before{content:"▌BORDER CROSSING▐"!important;border:0!important;text-align:start;letter-spacing:.14em;font-size:13px!important;margin:-4px 0 8px!important;padding:0!important}
+#app :is(.pop,.side) .tk .tks h5::before{content:""!important}
+#app :is(.pop,.side) .tk .tks h5,#app :is(.pop,.side) .tk .tks h5 *,#app :is(.pop,.side) .tk .tks:nth-child(n) h5,#app :is(.pop,.side) .tk .tks:nth-child(n) h5 *{background:transparent!important;color:var(--amb)!important;box-shadow:none!important;border:0!important;padding:0!important;font:400 17px var(--stencil)!important;letter-spacing:.1em}
+#app :is(.pop,.side) .tk .tks h5{display:flex!important;align-items:center;gap:8px;border-bottom:2px solid var(--amb)!important;padding-bottom:4px!important;margin-bottom:10px!important}
+#app :is(.pop,.side) .tk .tks .chip,#app :is(.pop,.side) .tk .tks:first-child .chip,#app :is(.pop,.side) .tk .tks .chip *{background:transparent!important;border:0!important;color:var(--ph)!important;padding:0 6px!important}
+#app :is(.pop,.side) .tk .tks .chip{border:1px dashed var(--ph)!important}
+#app :is(.pop,.side) .tk .tinfo.c>div{background:transparent!important;border:0!important;border-bottom:1px dashed rgba(155,255,138,.4)!important;box-shadow:none!important;padding:5px 0!important;margin:0!important}
+#app :is(.pop,.side) .tk .cocard{background:transparent!important;border:0!important;border-inline-start:3px solid var(--amb)!important;box-shadow:none!important;padding:2px 10px!important;margin:14px 0!important}
+#app :is(.pop,.side) .tk .cocard:first-child{border-top:0!important}
+#app :is(.pop,.side) .tk .cl:nth-child(even),#app :is(.pop,.side) .tk .cl:nth-child(odd){background:transparent!important;padding:3px 0!important}
+#app :is(.pop,.side) .tk .tks .cty,#app :is(.pop,.side) .tk .tks .rbn,#app :is(.pop,.side) .tk .tks .rbn *{background:transparent!important;color:var(--amb)!important;border:0!important;padding:0 4px!important}
+#app :is(.pop,.side) .tk .cocard .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b,#app :is(.pop,.side) .tk .cocard:nth-child(n) .cohead b *{background:transparent!important;color:var(--amb)!important;padding:0!important;font-size:18px!important}
+#app :is(.pop,.side) .tk .cocard .mp,#app :is(.pop,.side) .tk .cocard .mp *{background:transparent!important;color:var(--ph)!important;border:0!important;text-decoration:underline}
+#app :is(.pop,.side) .tk .tks .tp small{color:var(--ph)!important}
+#app :is(.pop,.side) .stips{background:transparent!important;border:0!important;border-top:2px dashed var(--amb)!important;box-shadow:none!important}
+#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions){border:0!important;border-bottom:2px dashed var(--ol)!important;background:transparent!important}
+#app :is(.pop,.side)>:not(.tk):not(h3):not(.actions) *:not(.tk){border-color:transparent!important;background:transparent!important;box-shadow:none!important}
+#app :is(.pop,.side) .tk .tks:nth-child(2)::before,#app :is(.pop,.side) .tk .tks:nth-child(3)::before{display:none!important}
+#app :is(.pop,.side) .tk .tks+.tks{border-top:2px dashed #6B7A3A!important;margin-top:14px!important;padding-top:14px!important}
+
+/* ===== DOS v4 ===== */
+#app .pop .pophd+.asec>h4{display:none!important}
+#app .pop .pophd .lab{display:none!important}
+#app .mapbox .readout{display:none!important}
+#app :is(.pop,.side) .tk{margin:0 0 64px!important;border-width:9px!important;box-shadow:0 0 0 3px #000,0 8px 0 3px #000!important;position:relative}
+#app :is(.pop,.side) .tk:nth-child(odd){--p:repeating-linear-gradient(-45deg,#FFB000 0 10px,#12160B 10px 20px)!important}
+#app :is(.pop,.side) .tk:nth-child(even){--p:radial-gradient(circle at 30% 40%,#2F3A1C 0 28%,transparent 29%) 0 0/34px 30px,radial-gradient(circle at 75% 70%,#8A8F5A 0 26%,transparent 27%) 0 0/30px 34px,#55612F!important}
+#app :is(.pop,.side) .tk:last-child{margin-bottom:8px!important}
+#app :is(.pop,.side) .tk::after{content:"";display:block!important;position:absolute!important;left:12%;right:12%;bottom:-40px;height:6px;border:0!important;width:auto!important;transform:none!important;background:repeating-linear-gradient(90deg,#6B7A3A 0 12px,transparent 12px 20px)!important}
+#app :is(.pop,.side) .tk:last-child::after{display:none!important}
+
+/* ===== DOS v5: bigger gaps, no location caption ===== */
+#app #wx{display:none!important}
+#app :is(.pop,.side) .tk{margin:0 0 110px!important}
+#app :is(.pop,.side) .tk:last-child{margin-bottom:30px!important}
+#app :is(.pop,.side) .tk::after{bottom:-62px!important;height:12px!important;left:6%!important;right:6%!important;background:repeating-linear-gradient(-45deg,#FFB000 0 8px,#12160B 8px 16px)!important;border:2px solid #000!important;box-sizing:border-box}
+#app :is(.pop,.side) .arow{background:#0B120A!important;border:3px solid #6B7A3A!important;border-radius:0!important;box-shadow:5px 5px 0 #000!important;margin:0 0 34px!important;padding:12px!important;color:#E6F4C8!important;font-family:var(--mono)!important}
+#app :is(.pop,.side) .arow *{color:#E6F4C8!important;font-family:var(--mono)!important}
+#app :is(.pop,.side) .arow b{color:#FFB000!important;font:400 17px var(--stencil)!important}
+#app :is(.pop,.side) .arow .pairs{color:#9BFF8A!important}
+#app :is(.pop,.side) .arow .btn{background:#FFB000!important;color:#000!important}
+#app :is(.pop,.side) .arow .btn *{color:#000!important}
+#app :is(.pop,.side) .arow .btn.primary{background:#9BFF8A!important}
+#app .pop .asec{margin-top:36px!important}
+
+/* ===== DOS v6: explicit card borders ===== */
+#app :is(.pop,.side) .tk:nth-child(odd){background:repeating-linear-gradient(0deg,rgba(0,0,0,.30) 0 1px,transparent 1px 3px),linear-gradient(#0B120A,#0B120A) padding-box,repeating-linear-gradient(-45deg,#FFB000 0 10px,#12160B 10px 20px) border-box!important}
+#app :is(.pop,.side) .tk:nth-child(even){background:repeating-linear-gradient(0deg,rgba(0,0,0,.30) 0 1px,transparent 1px 3px),linear-gradient(#0B120A,#0B120A) padding-box,radial-gradient(circle at 30% 40%,#2F3A1C 0 28%,transparent 29%) 0 0/34px 30px border-box,radial-gradient(circle at 75% 70%,#8A8F5A 0 26%,transparent 27%) 0 0/30px 34px border-box,linear-gradient(#55612F,#55612F) border-box!important}
+
+#app .pop .asec .tk .actions .btn{background:#FFB000!important;color:#000!important;border:3px solid #000!important;opacity:1!important;box-shadow:3px 3px 0 #000!important}
+#app .pop .asec .tk .actions .btn *{color:#000!important}
+#app .pop .asec .tk .actions .btn.primary{background:#9BFF8A!important}
+#app .pop .asec .tk .tks h5{border-bottom:2px solid #FFB000!important}
+#app .here-card,#app .herecard{display:none!important}
 </style>
 
 <div id="app" dir="rtl" lang="he">
