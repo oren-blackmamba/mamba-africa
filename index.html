@@ -999,6 +999,8 @@ button,select,.btn{min-height:44px}
 #app .pop .asec .tk .actions .btn.primary{background:#9BFF8A!important}
 #app .pop .asec .tk .tks h5{border-bottom:2px solid #FFB000!important}
 #app .here-card,#app .herecard{display:none!important}
+#app details.more{display:none!important}
+#app .side:empty,#app .side:not(:has(> :not(.here-card):not(.more))){display:none!important}
 </style>
 
 <div id="app" dir="rtl" lang="he">
@@ -2132,11 +2134,8 @@ function renderTrip(){
  drawMap({on:on,nodes:nodes,nextIds:nextIds,opts:opts,here:cur,focus:true,country:here.c,packAt:state.atB?bpt(legById(state.atB)):null});
 
  side+='<div class="here-card"><div class="lab">YOU ARE HERE / אתם כאן</div><div class="herecard">'+packIcon(44)+'<div><h2>'+here.he+'</h2><p class="sm">'+here.c+(VMAP[here.c]?' · כניסה: '+VMAP[here.c][1]:'')+'</p></div></div></div>';
- if(seq.length>1){
-  side+='<div class="sec-h"><h3>המסע עד עכשיו</h3></div>'+statsHTML(s,seq.length-1)+trailHTML(seq,seq.length-1);
- }
  side+=reachHTML(cur);
- if(hid)side+='<p class="hiddenn">'+hid+' קווים נוספים מכאן מוסתרים כי הם מסומנים כמסוכנים. אפשר להציג אותם בתיבת הסימון למעלה.</p>';
+ if(false)side+='<p class="hiddenn">'+hid+' קווים נוספים מכאן מוסתרים כי הם מסומנים כמסוכנים. אפשר להציג אותם בתיבת הסימון למעלה.</p>';
  $('#side').innerHTML=side;
  $('#side').querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){state.mode='p2p';state.from=cur;state.to=b.dataset.go;render();$('#board').scrollIntoView({behavior:'smooth'})})});
  $('#side').querySelectorAll('[data-how]').forEach(function(b){b.addEventListener('click',function(){openPop(b.dataset.how);var p=$('#pop');if(p&&p.scrollIntoView)p.scrollIntoView({behavior:'smooth',block:'nearest'})})});
