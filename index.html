@@ -977,7 +977,6 @@ button,select,.btn{min-height:44px}
 #app :is(.pop,.side) .tk:last-child::after{display:none!important}
 
 /* ===== DOS v5: bigger gaps, no location caption ===== */
-#app #wx{display:none!important}
 #app :is(.pop,.side) .tk{margin:0 0 110px!important}
 #app :is(.pop,.side) .tk:last-child{margin-bottom:30px!important}
 #app :is(.pop,.side) .tk::after{bottom:-62px!important;height:12px!important;left:6%!important;right:6%!important;background:repeating-linear-gradient(-45deg,#FFB000 0 8px,#12160B 8px 16px)!important;border:2px solid #000!important;box-sizing:border-box}
@@ -1001,6 +1000,26 @@ button,select,.btn{min-height:44px}
 #app .here-card,#app .herecard{display:none!important}
 #app details.more{display:none!important}
 #app .side:empty,#app .side:not(:has(> :not(.here-card):not(.more))){display:none!important}
+
+#app .routebar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px;padding-top:10px;border-top:2px dashed rgba(0,0,0,.25)}
+#app .routebar[hidden]{display:none}
+#app .routebar .rbt{font-weight:800;margin-inline-end:4px}
+#app .routebar .btn{min-height:40px}
+#app #rbmsg{font-size:14px;font-weight:700;color:#0B7A3B}
+
+/* ===== weather: DOS green ===== */
+#app .instr #wx{display:block!important;max-width:330px;background:#050A04!important;color:#6BFF6B!important;border:3px double #6BFF6B!important;border-radius:0!important;box-shadow:0 0 14px rgba(107,255,107,.35),4px 4px 0 #000!important;
+ padding:8px 14px 8px!important;font-family:"VT323","Share Tech Mono","Courier New",monospace!important;text-shadow:0 0 6px rgba(107,255,107,.75);letter-spacing:.04em;line-height:1.2;
+ background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.35) 0 1px,transparent 1px 3px)!important}
+#app .instr #wx::before{content:"> WEATHER REPORT";display:block;font-size:15px;color:#FFB000;text-shadow:none;border-bottom:1px dashed #6BFF6B;margin-bottom:4px;direction:ltr;text-align:start}
+#app .instr #wx *{color:#6BFF6B!important;font-family:inherit!important;opacity:1!important}
+#app .instr #wx #wxt{font-size:22px;color:#fff!important}
+#app .instr #wx .wxb{font-size:24px!important;margin:0!important;display:inline}
+#app .instr #wx .wxs{display:block;font-size:19px}
+#app .instr #wx .wxc{display:block;font-size:14px;margin:2px 0 0;color:#FFB000!important;direction:ltr;text-align:start}
+#app .instr #wx .wxc::before{content:"SRC: "}
+#app .instr #wx .wxc::after{content:" \2588";animation:mdblink 1s steps(1) infinite}
+@media (prefers-reduced-motion:reduce){#app .instr #wx .wxc::after{animation:none}}
 </style>
 
 <div id="app" dir="rtl" lang="he">
@@ -1030,6 +1049,7 @@ button,select,.btn{min-height:44px}
         <button role="tab" id="r-west" aria-selected="false" data-r="west">מערב אפריקה</button>
       </div>
       <div id="ctl"></div>
+      <div class="routebar" id="routebar" hidden></div>
       <div class="tools">
         <label class="chk"><input type="checkbox" id="dng" checked> כולל קווים מסוכנים (קונגו, דרום סודן)</label>
       </div>
@@ -1843,7 +1863,7 @@ function busCard(l,fk,acts){
   +(acts?'<div class="actions">'+acts+'</div>':'')+'</div>';
 }
 function hav(a,b){var R=6371,r=Math.PI/180,dl=(b.la-a.la)*r,dn=(b.lo-a.lo)*r,x=Math.sin(dl/2)*Math.sin(dl/2)+Math.cos(a.la*r)*Math.cos(b.la*r)*Math.sin(dn/2)*Math.sin(dn/2);return 2*R*Math.asin(Math.sqrt(x))}
-function fmtT(t){var d=Math.floor(t/24),m=Math.round((t-d*24)*60/5)*5,hh=Math.floor(m/60)%24,mm=m%60;return (hh<10?'0':'')+hh+':'+(mm<10?'0':'')+mm+(d>0?' (+'+d+(d===1?' יום':' ימים')+')':'')}
+function fmtT(t){var d=Math.floor(t/24),m=Math.round((t-d*24)*60/5)*5,hh=Math.floor(m/60)%24,mm=m%60;return (hh<10?'0':'')+hh+':'+(mm<10?'0':'')+mm+(d>0?(d===1?' למחרת':' אחרי '+d+' ימים'):'')}
 var CUR={'קניה':'שילינג קנייתי (KES)','אוגנדה':'שילינג אוגנדי (UGX)','רואנדה':'פרנק רואנדי (RWF)','טנזניה':'שילינג טנזני (TZS)','בורונדי':'פרנק בורונדי (BIF)','קונגו':'פרנק קונגולזי (CDF), דולר נפוץ','זמביה':'קוואצ׳ה (ZMW)','מלאווי':'קוואצ׳ה מלאווית (MWK)','מוזמביק':'מטיקאל (MZN)','זימבבואה':'דולר אמריקאי / ZiG','דרום אפריקה':'ראנד (ZAR)','בוטסוואנה':'פולה (BWP)','נמיביה':'דולר נמיבי (NAD)','גאנה':'סדי (GHS)','טוגו':'פרנק CFA (XOF)','בנין':'פרנק CFA (XOF)','ניגריה':'נאירה (NGN)','סנגל':'פרנק CFA (XOF)','גמביה':'דלסי (GMD)','אתיופיה':'ביר (ETB)','דרום סודן':'פאונד דרום־סודני (SSP), דולר נפוץ'};
 
 Object.assign(HB,{'Ntam':'נטם',"Tog Wajaale": "טוג ואג׳אלה", "Malaba": "מלבה", "Manyovu": "מניובו", "Songwe": "סונגווה", "Machipanda": "מצ׳יפנדה", "Namaacha": "נמאצ׳ה", "Kosi Bay": "קוסי ביי", "Mamuno": "מאמונו", "Kasumbalesa": "קסומבלסה", "Luvo": "לובו", "Kye-Ossi": "קיה־אוסי", "Kousseri": "קוסרי", "Jibiya": "ג׳יביה", "Makalondi": "מקלונדי", "Malanville": "מלנוויל", "Cinkansé": "סינקנסה", "Paga": "פאגה", "Koloko": "קולוקו", "Kidira": "קיידירה", "Zégoua": "זגואה"});
@@ -2192,6 +2212,7 @@ function render(){
  if(state.mode==='trip')renderTrip();else renderP2P();
  $('#m-trip').setAttribute('aria-selected',state.mode==='trip');$('#m-p2p').setAttribute('aria-selected',state.mode==='p2p');
  $('#r-east').setAttribute('aria-selected',state.region==='east');$('#r-west').setAttribute('aria-selected',state.region==='west');
+ try{updateRouteBar()}catch(e){}
 }
 function setMode(m){state.atB=null;state.mode=m;if(m==='p2p'){var t=state.trip;if(t.length>1){state.from=t[0];state.to=t[t.length-1]}}render()}
 function setRegion(r){manual=false;state.atB=null;state.region=r;state.view='region';state.trip=[DEF[r][0]];state.from=DEF[r][0];state.to=DEF[r][1];render()}
@@ -2252,6 +2273,69 @@ function wxUpdate(){var k=wxHere(),n=NODES[k];if(!n||!$('#wx'))return;
    $('#wxs').textContent='מחר: '+Math.round(y.temperature_2m_min[1])+'–'+Math.round(y.temperature_2m_max[1])+'° · סיכוי גשם '+y.precipitation_probability_max[1]+'%'})
   .catch(function(){if(wxKey===k)$('#wxb').textContent='מזג האוויר לא זמין כרגע'})}catch(e){$('#wxb').textContent='מזג האוויר לא זמין כרגע'}}
 render();
+/* ===== route save / share ===== */
+function routeSeq(){var s=state.mode==='trip'?state.trip.slice():(state.from!==state.to?path(state.from,state.to):null);return s&&s.length>1?s:null}
+function cleanCo(c){return c.replace(/\s*\((לאמת|verify)[^)]*\)/g,'').trim()}
+function legDetail(l,fk,idx){
+ var tmp=document.createElement('div');tmp.style.cssText='position:fixed;left:-9999px;top:0;width:600px;direction:rtl';
+ tmp.innerHTML=busCard(l,fk,'');
+ tmp.querySelectorAll('.actions,button,.stips,.mp').forEach(function(e){e.remove()});
+ cleanVerify(tmp);
+ var extra='';
+ if(l.steps&&l.steps.length)extra+='<section class="tks"><h5>שלבים</h5><ol>'+l.steps.map(function(x){return '<li>'+escH(x)+'</li>'}).join('')+'</ol></section>';
+ if(l.tips&&l.tips.length)extra+='<section class="tks"><h5>טיפים</h5><ul>'+l.tips.map(function(x){return '<li>'+escH(x)+'</li>'}).join('')+'</ul></section>';
+ var ex=document.createElement('div');ex.innerHTML=extra;cleanVerify(ex);
+ tmp.firstElementChild.appendChild(ex);
+ document.body.appendChild(tmp);
+ var secs=[].slice.call(tmp.querySelectorAll('.tks')).map(function(x){return x.innerText.replace(/[ \t]+\n/g,'\n').replace(/\n{2,}/g,'\n').trim()}).filter(function(x){return x.replace(/\s/g,'')&&x!==''});
+ var html=tmp.firstElementChild.innerHTML;
+ tmp.remove();
+ var A=NODES[fk],B=NODES[fk===l.a?l.b:l.a];
+ return {html:html,text:secs.join('\n\n'),title:A.he+' ← '+B.he};
+}
+function routeData(seq){
+ var legs=[],hrs=0,br=0;
+ for(var i=0;i<seq.length-1;i++){
+  var l=legBetween(seq[i],seq[i+1]);if(!l)continue;hrs+=mid(l);if(l.border)br++;
+  legs.push(legDetail(l,seq[i],i));
+ }
+ return {legs:legs,hrs:Math.round(hrs),br:br,title:NODES[seq[0]].he+' ← '+NODES[seq[seq.length-1]].he};
+}
+function routeText(d){
+ var t='🚌 ממבה אפריקה: '+d.title+'\n'+d.legs.length+' קטעים · '+d.br+' גבולות · כ-'+d.hrs+' שעות נסיעה\n';
+ d.legs.forEach(function(l,i){t+='\n\n━━━━━━━━━━━━━━\nקטע '+(i+1)+': '+l.title+'\n━━━━━━━━━━━━━━\n'+l.text+'\n'});
+ return t+'\nהמידע הוא הערכה בלבד. תמיד לברר בתחנה.';
+}
+function escH(x){return String(x).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function routeHTML(d){
+ var css='body{margin:0;background:#1A2410;color:#E6F4C8;font:17px/1.6 system-ui,Arial,sans-serif;padding:14px;max-width:760px;margin-inline:auto}h1{color:#FFB000;font-size:26px;margin:0 0 4px}.sum{color:#9BFF8A;margin-bottom:18px}.leg{margin:0 0 70px;padding-bottom:40px;border-bottom:6px double #FFB000}.leg:last-of-type{border-bottom:0}.lh{margin:0 0 14px;color:#fff;font-size:24px;background:#12160B;border-inline-start:8px solid #FFB000;padding:8px 12px}.lh span{color:#FFB000;margin-inline-end:8px}.bcard2{border:3px solid #6B7A3A;background:#0B120A;padding:12px;margin:0}.tp small{display:block}.tp b{display:block}.tks{padding:10px 4px;border-top:2px dashed #6B7A3A}.tks:first-child{border-top:0}h5{margin:0 0 8px;color:#FFB000;font-size:19px}.tp b{font-size:22px;color:#fff}.tp small,.cty{color:#9BFF8A}.tp{margin:6px 0}.rbn{color:#FF9A7A;font-weight:700}.chip{display:inline-block;border:1px dashed #9BFF8A;padding:0 8px;margin:2px}.cocard{border-inline-start:3px solid #FFB000;padding:2px 10px;margin:12px 0}.cohead b{color:#FFB000;font-size:18px}.cl{margin:6px 0}.cl small{display:block;color:#9BFF8A}.tinfo.c>div{border-bottom:1px dashed rgba(155,255,138,.4);padding:4px 0}.dot,.ci{display:inline-block}a{color:#9BFF8A}.f{color:#aaa;font-size:14px;margin-top:20px}';
+ var h='<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escH(d.title)+' | ממבה אפריקה</title><style>'+css+'</style></head><body><h1>🚌 '+escH(d.title)+'</h1><div class="sum">'+d.legs.length+' קטעים · '+d.br+' גבולות · כ-'+d.hrs+' שעות נסיעה</div>';
+ d.legs.forEach(function(l,i){h+='<section class="leg"><h2 class="lh"><span>קטע '+(i+1)+'</span> '+escH(l.title)+'</h2>'+l.html+'</section>'});
+ return h+'<div class="f">נשמר מאתר ממבה אפריקה. המידע הוא הערכה בלבד, תמיד לברר בתחנה. הקובץ עובד בלי אינטרנט.</div></body></html>';
+}
+function fileSave(name,blob){
+ return (window.claude&&claude.use?claude.use('downloads'):Promise.resolve(null)).then(function(dl){
+  if(dl&&dl.save)return blob.arrayBuffer().then(function(buf){return dl.save({filename:name,data:new Uint8Array(buf)})});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();
+ });
+}
+function rbMsg(t){var m=document.getElementById('rbmsg');if(m){m.textContent=t;clearTimeout(rbMsg.t);rbMsg.t=setTimeout(function(){m.textContent=''},4000)}}
+function slug(d){return 'mamba-'+d.title.replace(/[^\w֐-׿]+/g,'-').slice(0,40)}
+function updateRouteBar(){
+ var bar=document.getElementById('routebar');if(!bar)return;var seq=routeSeq();
+ if(!seq){bar.hidden=true;return}
+ bar.hidden=false;
+ if(!bar.dataset.ready){bar.dataset.ready='1';
+  bar.innerHTML='<span class="rbt">המסלול שלכם</span><button class="btn sm" id="rbsave">📥 שמירה ללא קליטה</button><button class="btn sm" id="rbshare">📤 שיתוף</button><span id="rbmsg" role="status" aria-live="polite"></span>';
+  document.getElementById('rbsave').addEventListener('click',function(){var s=routeSeq();if(!s)return;var d=routeData(s);
+   fileSave(slug(d)+'.html',new Blob([routeHTML(d)],{type:'text/html'})).then(function(){rbMsg('נשמר. פתחו את הקובץ מהטלפון גם בלי אינטרנט.')},function(){rbMsg('השמירה בוטלה או לא נתמכת כאן.')})});
+  document.getElementById('rbshare').addEventListener('click',function(){var s=routeSeq();if(!s)return;var t=routeText(routeData(s));
+   if(navigator.share){navigator.share({text:t}).catch(function(){})}
+   else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){rbMsg('הטקסט הועתק. הדביקו בוואטסאפ.')},function(){rbMsg('לא הצלחתי להעתיק.')})}
+   else rbMsg('השיתוף לא נתמך בדפדפן הזה.')});
+ }
+}
+
 })();
 </script>
 <button type="button" id="a11yfab" aria-label="תפריט נגישות" aria-expanded="false" aria-controls="a11ypanel">♿</button>
