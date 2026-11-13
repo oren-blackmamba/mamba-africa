@@ -1020,6 +1020,16 @@ button,select,.btn{min-height:44px}
 #app .instr #wx .wxc::before{content:"SRC: "}
 #app .instr #wx .wxc::after{content:" \2588";animation:mdblink 1s steps(1) infinite}
 @media (prefers-reduced-motion:reduce){#app .instr #wx .wxc::after{animation:none}}
+
+/* ===== DOS links + legal ===== */
+#app .instr .mail{background:#050A04!important;color:#6BFF6B!important;border:3px double #6BFF6B!important;border-radius:0!important;box-shadow:0 0 12px rgba(107,255,107,.3),4px 4px 0 #000!important;font-family:"VT323","Share Tech Mono","Courier New",monospace!important;font-size:20px!important;letter-spacing:.04em;text-shadow:0 0 6px rgba(107,255,107,.7);padding:6px 14px!important;direction:ltr;text-decoration:none!important;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.35) 0 1px,transparent 1px 3px)!important}
+#app .instr .mail:hover,#app .instr .mail:focus-visible{background-color:#6BFF6B!important;color:#050A04!important;text-shadow:none}
+#app .instr .mail.gh::after{content:" \2588";animation:mdblink 1s steps(1) infinite}
+#app .instr{flex-wrap:wrap}
+#app footer .legal{margin:10px 0 0;font-size:13px;line-height:1.6;text-align:start}
+#app footer .legal summary{cursor:pointer;font-weight:700;text-decoration:underline}
+#app footer .legal p{margin:8px 0}
+@media (max-width:560px){#app .instr .mail{font-size:17px!important;padding:5px 10px!important;white-space:nowrap;max-width:100%;box-sizing:border-box}#app .instr .mail.gh::after{content:""}}
 </style>
 
 <div id="app" dir="rtl" lang="he">
@@ -1066,13 +1076,17 @@ button,select,.btn{min-height:44px}
 <g opacity=".35" stroke="#3b2a14" stroke-width="1"><path d="M0-50 L8-8 L50 0 L8 8 L0 50 L-8 8 L-50 0 L-8-8Z" fill="#c9a24c"/></g>
 <g class="cneedle"><path d="M0-56 L9 0 L-9 0Z" fill="#c4231b" stroke="#6b100c" stroke-width=".8"/><path d="M0 56 L9 0 L-9 0Z" fill="#f4efe2" stroke="#6b6350" stroke-width=".8"/></g>
 <circle r="7" fill="url(#cbr)" stroke="#4a3208" stroke-width="1.5"/><circle r="2.2" fill="#3b2a14"/>
-<circle r="88" fill="url(#cgl)"/></svg></div><section class="wx" id="wx" aria-live="polite" aria-label="מזג אוויר"><b id="wxt">מזג אוויר</b> <span id="wxb" class="wxb">בחרו עיר על המפה</span> <span id="wxs" class="wxs"></span> <span class="wxc">Open-Meteo</span></section><a class="mail" href="mailto:oren6791@gmail.com" aria-label="שליחת דוא״ל אל oren6791@gmail.com">✉ oren6791@gmail.com</a></div>
+<circle r="88" fill="url(#cgl)"/></svg></div><section class="wx" id="wx" aria-live="polite" aria-label="מזג אוויר"><b id="wxt">מזג אוויר</b> <span id="wxb" class="wxb">בחרו עיר על המפה</span> <span id="wxs" class="wxs"></span> <span class="wxc">Open-Meteo</span></section><a class="mail" href="mailto:oren6791@gmail.com" aria-label="שליחת דוא״ל אל oren6791@gmail.com">✉ oren6791@gmail.com</a><a class="mail gh" href="https://github.com/oren-blackmamba?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub של oren-blackmamba, נפתח בלשונית חדשה">&gt; GITHUB://oren-blackmamba</a></div>
       <div class="pop" id="pop" aria-live="polite" hidden></div>
       <div class="side" id="side"></div>
     </div>
   </div></main>
 
-  <footer>נבנה כדי שתדעו איפה לרדת מהאוטובוס. המידע להכוונה בלבד ואינו מהווה ייעוץ; מחירים, לוחות זמנים, ויזות ומצב הגבולות משתנים, ויש לאמת אותם מול הגורמים הרשמיים והמפעילים לפני כל נסיעה. <button type="button" class="a11yopen" id="a11ystmt">הצהרת נגישות</button></footer>
+  <footer>נבנה כדי שתדעו איפה לרדת מהאוטובוס. המידע להכוונה בלבד ואינו מהווה ייעוץ; מחירים, לוחות זמנים, ויזות ומצב הגבולות משתנים, ויש לאמת אותם מול הגורמים הרשמיים והמפעילים לפני כל נסיעה. <button type="button" class="a11yopen" id="a11ystmt">הצהרת נגישות</button><details class="legal"><summary>פרטיות ותנאי שימוש</summary>
+<p><b>פרטיות:</b> האתר אינו אוסף, שומר או שולח מידע אישי, ואין בו עוגיות או כלי מעקב. הגדרות הנגישות נשמרות במכשיר שלכם בלבד. כדי להציג גופנים ותחזית מזג אוויר האתר פונה לשירותים חיצוניים (Google Fonts ו-Open-Meteo). לשירותים אלה נחשפת כתובת ה-IP של המכשיר, ולשירות מזג האוויר נשלחים גם קווי הרוחב והאורך של העיר שנבחרה.</p>
+<p><b>תנאי שימוש:</b> המידע באתר הוא הערכה כללית להכוונה בלבד. הוא אינו ייעוץ מקצועי, רפואי, משפטי או ביטחוני, ואינו תחליף לבדיקה מול הגורמים הרשמיים. מחירים, שעות, תחנות, חברות, ויזות ומצב הגבולות והדרכים משתנים, ועלולים להיות לא מעודכנים או שגויים. בדקו אזהרות נסיעה עדכניות לפני כל נסיעה. השימוש באתר ובמידע על אחריות המשתמש בלבד, ובמידה המותרת בדין, בעל האתר אינו אחראי לנזק שייגרם משימוש בו.</p>
+<p><b>זכויות וקשרים:</b> אין קשר בין האתר לחברות האוטובוסים, למעברי הגבול או לגופים הנזכרים בו. שמות החברות והסימנים המסחריים שייכים לבעליהם ומוזכרים לצורך זיהוי בלבד. מפת האתר מצוירת בעצמה, ותחזית מזג האוויר מוצגת באדיבות Open-Meteo. לתיקון, הסרה או שאלה: oren6791@gmail.com.</p>
+</details></footer>
 </div>
 </div>
 
